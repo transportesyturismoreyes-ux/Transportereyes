@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte y Turismo Reyes | Chillán - Región del Ñuble</title>
+    <meta name="description" content="Transporte y Turismo Reyes - Servicios de transporte turístico, arriendo de buses y traslados especiales en Chillán y la Región del Ñuble, Chile.">
+    <link rel="icon" type="image/png" href="images/logo-corporativo-transparente.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mejoras.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <!-- ========== HEADER / NAVEGACIÓN ========== -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="#inicio" class="header__logo">
+                <img src="images/logo-corporativo-transparente.png" alt="Logo corporativo Transportes y Turismo Reyes" class="header__logo-img">
+                <div>
+                    <span class="header__logo-title">Transporte y Turismo</span>
+                    <span class="header__logo-subtitle">Reyes</span>
+                </div>
+            </a>
+            <nav class="header__nav" id="nav">
+                <a href="#inicio" class="header__link active">Inicio</a>
+                <a href="#nosotros" class="header__link">Nosotros</a>
+                <a href="#historia" class="header__link">Historia</a>
+                <a href="#servicios" class="header__link">Servicios</a>
+                <a href="#clientes" class="header__link">Clientes</a>
+                <a href="#flota" class="header__link">Nuestra Flota</a>
+                <a href="#galeria" class="header__link">Galería</a>
+                <a href="#contacto" class="header__link btn-contacto-nav">Contáctanos</a>
+            </nav>
+            <button class="header__toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO / INICIO ========== -->
+    <section class="hero" id="inicio">
+        <div class="hero__slider" id="heroSlider">
+            <!-- Slide 1 — Bus Volvo salón cama en cordillera -->
+            <div class="hero__slide active" style="background-image: url('images/volvo-salon-cama.jpeg');">
+                <div class="hero__overlay"></div>
+                <div class="container hero__content">
+                    <span class="hero__badge">Turismo y viajes especiales por todo Chile</span>
+                    <h1 class="hero__title">Vive la experiencia de <span>viajar con nosotros</span></h1>
+                    <p class="hero__text">Transporte seguro, cómodo y confiable para viajes turísticos, empresas, colegios y traslados especiales.</p>
+                    <div class="hero__buttons">
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20consultar%20por%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20orientar%3F" class="btn btn--primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+                        </a>
+                        <a href="#servicios" class="btn btn--outline">Ver Servicios</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 — Scania salón semi cama -->
+            <div class="hero__slide" style="background-image: url('images/hero-irizar-azul.jpeg');">
+                <div class="hero__overlay"></div>
+                <div class="container hero__content">
+                    <span class="hero__badge">Flota moderna con salones cama, semi cama y ejecutivo</span>
+                    <h1 class="hero__title">Tu viaje comienza <span>con Reyes</span></h1>
+                    <p class="hero__text">Buses Mercedes Benz, Scania, Volvo y King Long para servicios de turismo, empresas y colegios.</p>
+                    <div class="hero__buttons">
+                        <a href="#flota" class="btn btn--primary"><i class="fa-solid fa-bus"></i> Conoce Nuestra Flota</a>
+                        <a href="#contacto" class="btn btn--outline">Reservar Ahora</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 — Bus Reyes en la playa -->
+            <div class="hero__slide" style="background-image: url('images/bus-playa-mercedes.jpeg');">
+                <div class="hero__overlay"></div>
+                <div class="container hero__content">
+                    <span class="hero__badge">Flota para empresas, colegios y turismo</span>
+                    <h1 class="hero__title">Descubre los mejores <span>destinos turísticos</span></h1>
+                    <p class="hero__text">Termas, playas, cordillera, viñedos y mucho más. Nosotros te llevamos, tú solo disfruta.</p>
+                    <div class="hero__buttons">
+                        <a href="#galeria" class="btn btn--primary"><i class="fa-solid fa-images"></i> Ver Galería</a>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20reservar%20un%20viaje%20con%20Transporte%20y%20Turismo%20Reyes." class="btn btn--outline" target="_blank" rel="noopener">Reservar Viaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controles slider -->
+        <div class="hero__controls">
+            <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="hero__dots" id="heroDots"></div>
+            <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <!-- Scroll hint -->
+        <div class="hero__scroll-hint">Desplázate para explorar</div>
+    </section>
+
+    <!-- ========== BARRA DE STATS ========== -->
+    <section class="stats">
+        <div class="container stats__container">
+            <div class="stats__item">
+                <i class="fa-solid fa-route"></i>
+                <div>
+                    <span class="stats__number" data-target="50000">0</span><span class="stats__plus">+</span>
+                    <p>Kilómetros recorridos</p>
+                </div>
+            </div>
+            <div class="stats__item">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <span class="stats__number" data-target="10000">0</span><span class="stats__plus">+</span>
+                    <p>Pasajeros felices</p>
+                </div>
+            </div>
+            <div class="stats__item">
+                <i class="fa-solid fa-bus"></i>
+                <div>
+                    <span class="stats__number" data-target="8">0</span><span class="stats__plus">+</span>
+                    <p>Unidades disponibles</p>
+                </div>
+            </div>
+            <div class="stats__item">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <span class="stats__number" data-target="100">0</span><span class="stats__plus">%</span>
+                    <p>Compromiso y seguridad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NOSOTROS ========== -->
+    <section class="about" id="nosotros">
+        <div class="container about__container">
+            <div class="about__images">
+                <div class="about__img-main">
+                    <img src="images/hero-1.jpg" alt="Bus Reyes en ruta nevada de cordillera" loading="lazy">
+                </div>
+                <div class="about__img-secondary">
+                    <img src="images2/WhatsApp Image 2026-05-0 at 3.12.14 PM.jpeg" alt="Furgón Reyes con identidad de la empresa" loading="lazy" onerror="this.src='images/bus-5.jpg'">
+                </div>
+                <div class="about__experience-badge">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Experiencia</span>
+                    <strong>Comprobada</strong>
+                </div>
+            </div>
+            <div class="about__content">
+                <span class="section-tag">¿Quiénes Somos?</span>
+                <h2 class="section-title">Transporte y Turismo <span>Reyes</span></h2>
+                <p class="about__text">
+                    Somos una empresa originaria de <strong>Chillán, en el corazón de la Región del Ñuble</strong>, dedicada al transporte de pasajeros y turismo con pasión y compromiso. Operamos desde la ciudad de Chillán ofreciendo soluciones logísticas y de traslado adaptadas a cada cliente.
+                </p>
+                <p class="about__text">
+                    Contamos con <strong>furgones Mercedes-Benz y Ford Transit</strong> para traslados de personal de empresas y escolares.
+                </p>
+                <div class="about__features">
+                    <div class="about__feature">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h4>Seguridad Garantizada</h4>
+                            <p>Todas nuestras unidades con revisión técnica al día, seguros y GPS.</p>
+                        </div>
+                    </div>
+                    <div class="about__feature">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Puntualidad</h4>
+                            <p>Respetamos tus tiempos. Llegamos siempre a la hora acordada.</p>
+                        </div>
+                    </div>
+                    <div class="about__feature">
+                        <i class="fa-solid fa-heart"></i>
+                        <div>
+                            <h4>Atención Personalizada</h4>
+                            <p>Cada cliente es especial. Adaptamos el servicio a tus necesidades.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contacto" class="btn btn--primary">
+                    <i class="fa-solid fa-envelope"></i> Contáctanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NUESTRA HISTORIA ========== -->
+    <section class="history" id="historia">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestras Raíces</span>
+                <h2 class="section-title">Nuestra <span>Historia</span></h2>
+            </div>
+
+            <div class="history__grid">
+                <!-- Hito 1: Los inicios -->
+                <div class="history__card">
+                    <div class="history__card-top">
+                        <span class="history__badge"><i class="fa-solid fa-seedling"></i> 10.10.2013</span>
+                    </div>
+                    <div class="history__card-body">
+                        <div class="history__photos history__photos--feature">
+                            <button class="history__photo history__photo--main" type="button" data-lightbox-src="images/historia-bus-antiguo-1.jpg" data-lightbox-alt="Primer bus Reyes" aria-label="Ver foto ampliada: Primer bus Reyes">
+                                <img src="images/historia-bus-antiguo-1.jpg" alt="Primer bus Reyes" loading="lazy">
+                            </button>
+                            <button class="history__photo history__photo--side" type="button" data-lightbox-src="images/historia-bus-antiguo-2.jpg" data-lightbox-alt="Bus antiguo Reyes" aria-label="Ver foto ampliada: Bus antiguo Reyes">
+                                <img src="images/historia-bus-antiguo-2.jpg" alt="Bus antiguo Reyes" loading="lazy">
+                            </button>
+                        </div>
+                        <h3>Donde Todo Comenzó</h3>
+                        <p>Nuestra historia inicia el <strong>10 de octubre de 2013</strong> como un sueño personal desde niño. Con esfuerzo, trabajo y perseverancia, ese sueño comenzó a tomar forma hasta convertirse en Transporte y Turismo Reyes.</p>
+                    </div>
+                </div>
+
+                <!-- Hito 2: Ayuda en incendios -->
+                <div class="history__card history__card--highlight">
+                    <div class="history__card-top">
+                        <span class="history__badge history__badge--red"><i class="fa-solid fa-hand-holding-heart"></i> Solidaridad</span>
+                    </div>
+                    <div class="history__card-body">
+                        <div class="history__photos history__photos--feature">
+                            <button class="history__photo history__photo--main" type="button" data-lightbox-src="images/solidaridad-grupo-recorte-limpio.jpeg" data-lightbox-alt="Grupo de voluntarios junto a bus Reyes" aria-label="Ver foto ampliada: grupo de voluntarios junto a bus Reyes">
+                                <img src="images/solidaridad-grupo-recorte-limpio.jpeg" alt="Grupo de voluntarios junto a bus Reyes" loading="lazy">
+                            </button>
+                            <button class="history__photo history__photo--side" type="button" data-lightbox-src="images/solidaridad-ejercito.jpeg" data-lightbox-alt="Bus Reyes apoyando traslado de personal en emergencia" aria-label="Ver foto ampliada: bus Reyes apoyando traslado en emergencia">
+                                <img src="images/solidaridad-ejercito.jpeg" alt="Bus Reyes apoyando traslado de personal en emergencia" loading="lazy">
+                            </button>
+                        </div>
+                        <h3>Cuando Chile Nos Necesitó</h3>
+                        <p>Cuando Chile nos necesitó, pusimos nuestras unidades a disposición de las zonas afectadas para el <strong>traslado de voluntarios y la entrega de ayuda directa</strong> a nuestros compatriotas.</p>
+                    </div>
+                </div>
+
+                <!-- Hito 3: Hoy -->
+                <div class="history__card">
+                    <div class="history__card-top">
+                        <span class="history__badge history__badge--gold"><i class="fa-solid fa-trophy"></i> Hoy · +12 años</span>
+                    </div>
+                    <div class="history__card-body">
+                        <h3>El Camino Continúa</h3>
+                        <p>Hoy contamos con una flota moderna — Mercedes-Benz, Scania, Volvo y King Long — más Ford Transit para traslados menores de pasajeros. Todas nuestras unidades mantienen el compromiso de seguridad, puntualidad y buen servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICIOS ========== -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Lo Que Ofrecemos</span>
+                <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+                <p class="section-subtitle">Soluciones de transporte para cada necesidad. Desde un paseo turístico hasta logística empresarial.</p>
+            </div>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3>Unidad de Turismo</h3>
+                    <p>Nuestra unidad de turismo organiza viajes a los mejores destinos: termas, playas, cordillera, viñedos y más. Excursiones planificadas por todo Chile.</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20la%20Unidad%20de%20Turismo.%20%C2%BFMe%20pueden%20enviar%20informaci%C3%B3n%3F" target="_blank" rel="noopener" class="service-card__link">
+                        Consultar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Transporte Corporativo</h3>
+                    <p>Traslado de personal, eventos empresariales, convenciones y congresos. Servicio ejecutivo con profesionalismo.</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20transporte%20corporativo%20para%20mi%20empresa." target="_blank" rel="noopener" class="service-card__link">
+                        Consultar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <h3>Giras de Estudio y Viajes Especiales</h3>
+                    <p>Organizamos giras de estudio para colegios y universidades, paseos de curso y viajes especiales. Transporte seguro y planificación completa.</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20una%20gira%20de%20estudio%20o%20un%20viaje%20especial." target="_blank" rel="noopener" class="service-card__link">
+                        Consultar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3>Servicio Cama y Semi Cama</h3>
+                    <p>Viaja con máximo confort en nuestros buses con asientos cama y semi cama. Reclinación total, mayor espacio y descanso en cada trayecto.</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20el%20servicio%20cama%20o%20semi%20cama.%20%C2%BFMe%20pueden%20ayudar%20con%20una%20cotizaci%C3%B3n%3F" target="_blank" rel="noopener" class="service-card__link">
+                        Consultar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-tractor"></i>
+                    </div>
+                    <h3>Arriendo para Empresas Agrícolas</h3>
+                    <p>Arriendo de buses a empresas del rubro agrícola de temporada. Solo choferes de empresa. Servicio confiable y puntual para el traslado de trabajadores.</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20arriendo%20de%20bus%20para%20una%20empresa%20agr%C3%ADcola." target="_blank" rel="noopener" class="service-card__link">
+                        Consultar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>Transporte Escolar</h3>
+                    <p>Servicio seguro y responsable para el traslado de estudiantes. Cumplimos con toda la normativa vigente.</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20consultar%20por%20transporte%20escolar." target="_blank" rel="noopener" class="service-card__link">
+                        Consultar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CLIENTES / DÓNDE PRESTAMOS SERVICIO ========== -->
+    <section class="clients" id="clientes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Empresas y Organizaciones que Confían en Nosotros</span>
+                <h2 class="section-title">Dónde <span>Prestamos Servicio</span></h2>
+                <p class="section-subtitle">Actualmente brindamos transporte de personal y servicios especializados a las siguientes instituciones y empresas de la Región del Ñuble y zonas afines.</p>
+            </div>
+            
+            <!-- Educación -->
+            <div class="clients__category">
+                <div class="clients__category-header">
+                    <i class="fa-solid fa-school"></i>
+                    <h3>Educación - Establecimientos</h3>
+                </div>
+                <div class="clients__grid">
+                    <div class="client-card">
+                        <div class="client-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h4>Liceo Bicentenario de Excelencia Polivalente San Nicolás</h4>
+                        <p>Transporte escolar y gira de estudios</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h4>Liceo Narciso Tondreau</h4>
+                        <p>Transporte escolar y actividades</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h4>Liceo Bicentenario Marta Brunet de Chillán</h4>
+                        <p>Transporte para actividades educativas</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h4>Liceo Bicentenario de Excelencia Técnico Puente Ñuble.</h4>
+                        <p>Transporte escolar y giras</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-card__icon"><i class="fa-solid fa-school"></i></div>
+                        <h4>Escuela Juan Madrid Azolas</h4>
+                        <p>Transporte de estudiantes</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-card__icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <h4>Liceo Tomás Herrera Vega - Pemuco</h4>
+                        <p>Transporte escolar y salidas pedagógicas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empresas -->
+            <div class="clients__category">
+                <div class="clients__category-header">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Empresas y Corporaciones</h3>
+                </div>
+                <div class="clients__grid">
+                    <div class="client-card client-card--featured">
+                        <div class="client-card__icon"><i class="fa-solid fa-shopping-cart"></i></div>
+                        <h4> Mercado Libre Chile</h4>
+                        <p>Transporte de personal - Logística</p>
+                        <span class="client-card__badge">Servicio Activo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats de clientes -->
+            <div class="clients__stats">
+                <div class="clients__stat">
+                    <span class="clients__stat-number">6+</span>
+                    <span class="clients__stat-label">Establecimientos Educativos</span>
+                </div>
+                <div class="clients__stat">
+                    <span class="clients__stat-number">1</span>
+                    <span class="clients__stat-label">Empresa Logística</span>
+                </div>
+                <div class="clients__stat">
+                    <span class="clients__stat-number">100%</span>
+                    <span class="clients__stat-label">Clientes Satisfechos</span>
+                </div>
+            </div>
+
+            <div class="clients__cta">
+                <p>¿Tu empresa o institución necesita un servicio de transporte confiable?</p>
+                <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20un%20servicio%20de%20transporte%20para%20mi%20empresa%20o%20colegio." class="btn btn--primary" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar Servicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FLOTA PRINCIPAL ========== -->
+    <section class="fleet" id="flota">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Conoce Nuestras Unidades</span>
+                <h2 class="section-title">Nuestra <span>Flota</span></h2>
+                <p class="section-subtitle">Todas las unidades disponibles, sin repetir: buses Mercedes Benz, Scania, Volvo y King Long, con salones cama, semi cama y ejecutivo según la unidad.</p>
+            </div>
+            <div class="fleet__grid">
+                <!-- Scania Marcopolo Doble Piso — CAMA -->
+                <div class="fleet-card fleet-card--featured">
+                    <div class="fleet-card__img">
+                        <img src="images/scania-exterior.jpg" alt="Bus Scania Marcopolo Doble Piso Cama" loading="lazy">
+                        <span class="fleet-card__badge fleet-card__badge--cama">Salón Cama</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Bus Scania Salón Cama</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-bed"></i> Salón cama</li>
+                            <li><i class="fa-solid fa-layer-group"></i> Doble piso</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-restroom"></i> Baño (WC)</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Scania%20doble%20piso%20cama%20%2F%20semi%20cama." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Volvo Salón Cama -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/volvo-salon-cama.jpeg" alt="Bus Volvo Salón Cama para turismo" loading="lazy">
+                        <span class="fleet-card__badge fleet-card__badge--cama">Salón Cama</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Bus Volvo - Salón Cama</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-bed"></i> Salón cama</li>
+                            <li><i class="fa-solid fa-route"></i> Turismo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20bus%20Volvo%20sal%C3%B3n%20cama%20para%20turismo." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Mercedes-Benz Century — Salón Ejecutivo -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/bus-1.jpg" alt="Bus Mercedes-Benz Century Semi Cama" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Mercedes Benz Salón Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-restroom"></i> Baño (WC)</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20bus%20Mercedes-Benz%20Century." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Mercedes-Benz Ejecutivo -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/bus-playa-mercedes.jpeg" alt="Bus Mercedes-Benz Ejecutivo en la playa" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Mercedes Benz Salón Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-restroom"></i> Baño (WC)</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20bus%20Mercedes-Benz%20sal%C3%B3n%20ejecutivo." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Scania Semi Cama -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/hero-irizar-azul.jpeg" alt="Bus Scania Salón Semi Cama" loading="lazy">
+                        <span class="fleet-card__badge">Semi Cama</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Scania Salón Semi Cama</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-bed"></i> Salón semi cama</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-restroom"></i> Baño (WC)</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Scania%20azul%20sal%C3%B3n%20semi%20cama." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- King Long Naranja — Semi Cama -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/bus-2.jpg" alt="Bus King Long Semi Cama" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>King Long Salón Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-suitcase"></i> Bodega amplia</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20bus%20King%20Long%20Sal%C3%B3n%20Ejecutivo." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Mercedes Benz Rojo -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/mercedes-benz-salon-ejecutivo-rojo.jpeg" alt="Mercedes Benz Salón Ejecutivo rojo" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Mercedes Benz Salón Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-restroom"></i> Baño (WC)</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Mercedes%20Benz%20sal%C3%B3n%20ejecutivo%20rojo." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- King Long Blanco -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/king-long-ejecutivo-blanco.jpeg" alt="King Long Ejecutivo blanco" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>King Long Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-suitcase"></i> Bodega amplia</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20King%20Long%20ejecutivo%20blanco." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== OTRAS UNIDADES ========== -->
+    <section class="fleet fleet--secondary" id="otras-unidades">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Más Opciones de Transporte</span>
+                <h2 class="section-title">Otras <span>Unidades</span></h2>
+                <p class="section-subtitle">Unidades King Long, Sprinter, Ford Transit y taxi bus Mercedes Benz para grupos más reducidos y traslados especiales.</p>
+            </div>
+            <div class="fleet__grid fleet__grid--secondary">
+                <!-- King Long Rojo — Turismo -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/bus-3.jpg" alt="Bus King Long Rojo Turismo" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>King Long Salón Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-suitcase"></i> Bodega amplia</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20bus%20King%20Long%20Turismo." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Mercedes Benz Sprinter -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/bus-5.jpg" alt="Furgón para traslado menor de pasajeros" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Mercedes Benz Sprinter Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-suitcase-rolling"></i> Espacio equipaje</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Mercedes%20Benz%20Sprinter%20Ejecutivo%20para%20traslado%20menor%20de%20pasajeros." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Ford Transit Ejecutivo -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/ford-transit-ejecutivo.jpeg" alt="Ford Transit Ejecutivo Reyes" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Ford Transit Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Servicio ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-suitcase-rolling"></i> Traslado menor de pasajeros</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20la%20Ford%20Transit%20Ejecutivo%20para%20traslado%20menor%20de%20pasajeros." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+                <!-- Furgón Mercedes-Benz -->
+                <div class="fleet-card">
+                    <div class="fleet-card__img">
+                        <img src="images/taxibus-rosa.jpeg" alt="Furgón Mercedes-Benz Reyes" loading="lazy">
+                        <span class="fleet-card__badge">Ejecutivo</span>
+                    </div>
+                    <div class="fleet-card__info">
+                        <h3>Taxi bus Mercedes Benz Salón Ejecutivo</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-star"></i> Salón ejecutivo</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Aire acondicionado y calefacción</li>
+                            <li><i class="fa-solid fa-usb"></i> USB en todos los asientos</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Monitoreo por GPS</li>
+                            <li><i class="fa-solid fa-shield-halved"></i> Seguro y confiable</li>
+                        </ul>
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20furg%C3%B3n%20Mercedes-Benz%20ejecutivo." target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+                            <i class="fa-brands fa-whatsapp"></i> Cotizar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALERÍA ========== -->
+    <section class="destinations" id="galeria">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Buses en Acción</span>
+                <h2 class="section-title">Galería de <span>Viajes</span></h2>
+                <p class="section-subtitle">Nuestras unidades recorriendo los caminos de Chile. De la cordillera a la costa, siempre contigo.</p>
+            </div>
+            <div class="destinations__grid">
+                <div class="dest-card dest-card--large">
+                    <img src="images/galeria-cordillera.jpg" alt="Bus Reyes en la cordillera nevada" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <span class="dest-card__tag">Destacado</span>
+                        <h3>Ruta Cordillera</h3>
+                        <p>Nuestros buses recorren la cordillera con total seguridad, incluso en pleno invierno.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-atardecer.jpg" alt="Bus King Long al atardecer" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Rutas del Valle</h3>
+                        <p>Viajes por los valles y campos del Ñuble.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-noche.jpg" alt="Bus Reyes viajando de noche" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Viajes Nocturnos</h3>
+                        <p>Servicio 24/7, siempre listos para tu viaje.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-ruta.jpg" alt="Bus Reyes en ruta Región del Ñuble" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Región del Ñuble</h3>
+                        <p>Conectando Chillán con todo Chile.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-van.jpg" alt="Furgón Reyes para transfer y traslado menor" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Traslado Menor</h3>
+                        <p>Furgón para traslados especiales y grupos reducidos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA / BANNER ========== -->
+    <section class="cta">
+        <div class="cta__bg" style="background-image: url('images/cta-bg.jpg');"></div>
+        <div class="cta__overlay"></div>
+        <div class="container cta__container">
+            <h2>¿Listo para tu próximo viaje?</h2>
+            <p>Contáctanos ahora y te ayudamos a planificar el recorrido perfecto. Cotizaciones sin compromiso.</p>
+            <div class="cta__buttons">
+                <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20un%20viaje%20con%20Transporte%20y%20Turismo%20Reyes." class="btn btn--whatsapp" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
+                </a>
+                <a href="tel:+56936363564" class="btn btn--outline-white">
+                    <i class="fa-solid fa-phone"></i> Llámanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOMENAJE DESTACADO / OPCIÓN TESTIMONIO ========== -->
+    <section class="tribute-section" id="homenaje">
+        <div class="container tribute-section__container">
+            <div class="tribute-section__photo">
+                <img src="images/homenaje-mimo-franco.jpeg" alt="Homenaje a Mimo Franco junto a bus Reyes" loading="lazy">
+            </div>
+            <div class="tribute-section__content">
+                <span class="section-tag">Homenaje</span>
+                <h2 class="section-title">Gracias por acompañar <span>nuestros viajes</span></h2>
+                <p>
+                    En memoria de nuestro querido colaborador <strong>Mimo Franco (Q.E.P.D.)</strong>, quien nos acompañó
+                    durante los viajes, entregando alegría y entretención a nuestros estudiantes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!-- ========== CONTACTO ========== -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Estamos Para Ayudarte</span>
+                <h2 class="section-title">Contáctanos y <span>Reserva tu Viaje</span></h2>
+                <p class="section-subtitle">Escríbenos por cualquiera de nuestros canales o completa el formulario. ¡Te respondemos a la brevedad!</p>
+            </div>
+            <div class="contact__container">
+                <!-- Info de contacto -->
+                <div class="contact__info">
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon contact__info-icon--wa">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp — Gerente General</h4>
+                            <p>Cotizaciones y reservas</p>
+                            <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener">+56 9 3636 3564</a>
+                        </div>
+                    </div>
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp — Recursos Humanos</h4>
+                            <p>Oportunidades laborales</p>
+                            <a href="https://wa.me/56986353834?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener">+56 9 8635 3834</a>
+                        </div>
+                    </div>
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp — Social Media Manager</h4>
+                            <p>Consultas digitales y redes sociales</p>
+                            <a href="https://wa.me/56910108997?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener">+56 9 1010 8997</a>
+                        </div>
+                    </div>
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Correo Electrónico</h4>
+                            <p>Escríbenos cuando quieras</p>
+                            <a href="mailto:buses.rodrigoreyes@gmail.com">buses.rodrigoreyes@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact__info-card">
+                        <div class="contact__info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Chillán, Región del Ñuble</p>
+                            <span>Chile</span>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="contact__socials">
+                        <h4>Síguenos en Redes</h4>
+                        <div class="contact__social-links">
+                            <a href="https://www.facebook.com/share/1GTTWU1X2M/" target="_blank" rel="noopener" class="social-link social-link--facebook" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/transportes_reyes1?igsh=MTQ2MHhxMGxyczh3OA==" target="_blank" rel="noopener" class="social-link social-link--instagram" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@transportes.y.tur7?_r=1&_t=ZS-94zwaBvQXXp" target="_blank" rel="noopener" class="social-link social-link--tiktok" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <form class="contact__form" id="contactForm">
+                    <h3><i class="fa-solid fa-paper-plane"></i> Solicita tu Cotización</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono / WhatsApp *</label>
+                            <input type="tel" id="telefono" name="telefono" required placeholder="+56 9 XXXX XXXX">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Tipo de servicio *</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="" disabled selected>Selecciona un servicio</option>
+                                <option value="Turismo y Excursiones">Turismo y Excursiones</option>
+                                <option value="Transporte Corporativo">Transporte Corporativo</option>
+                                <option value="Paseo Grupal">Paseo Grupal</option>
+                                <option value="Traslado Especial">Traslado Especial</option>
+                                <option value="Arriendo de Bus">Arriendo de Bus</option>
+                                <option value="Transporte Escolar">Transporte Escolar</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha">Fecha del viaje</label>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
+                        <div class="form-group">
+                            <label for="pasajeros">Nº de pasajeros</label>
+                            <input type="number" id="pasajeros" name="pasajeros" min="1" placeholder="Ej: 30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Cuéntanos más sobre tu viaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Destino, horarios, necesidades especiales..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Cotización por WhatsApp
+                    </button>
+                    <p class="form-note">* Al enviar, serás redirigido a WhatsApp con tu mensaje listo.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MAPA ========== -->
+    <section class="map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51891.41964370678!2d-72.1526647!3d-36.6066338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966856bfe397c923%3A0x18a26dbb40ee7a8!2sChillan%2C%20Chill%C3%A1n%2C%20%C3%91uble%2C%20Chile!5e0!3m2!1ses!2scl!4v1" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa ubicación Transporte y Turismo Reyes - Chillán"
+        ></iframe>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <img src="images/logo-corporativo-transparente.png" alt="Logo corporativo Transportes y Turismo Reyes" class="footer__logo-img">
+                        <div>
+                            <span>Transporte y Turismo</span>
+                            <strong>Reyes</strong>
+                        </div>
+                    </div>
+                    <p>Empresa de transporte de pasajeros y turismo con base en Chillán, Región del Ñuble. Conectamos personas con los destinos más hermosos de Chile.</p>
+                    <div class="footer__socials">
+                        <a href="https://www.facebook.com/share/1GTTWU1X2M/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/transportes_reyes1?igsh=MTQ2MHhxMGxyczh3OA==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@transportes.y.tur7?_r=1&_t=ZS-94zwaBvQXXp" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#flota">Nuestra Flota</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Turismo y Excursiones</a></li>
+                        <li><a href="#servicios">Transporte Corporativo</a></li>
+                        <li><a href="#servicios">Paseos Grupales</a></li>
+                        <li><a href="#servicios">Traslados Especiales</a></li>
+                        <li><a href="#servicios">Arriendo Agrícola</a></li>
+                        <li><a href="#servicios">Transporte Escolar</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> Chillán, Región del Ñuble, Chile</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener">+56 9 3636 3564</a></li>
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:+56986353834">+56 9 8635 3834</a></li>
+                        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:buses.rodrigoreyes@gmail.com">buses.rodrigoreyes@gmail.com</a></li>
+                        <li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/transportes_reyes1" target="_blank" rel="noopener">@transportes_reyes1</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="footer-year">2026</span> Transporte y Turismo Reyes. Todos los derechos reservados.</p>
+                <p class="footer__credit">
+                    Sitio web desarrollado por <strong>Diego Eduardo Henríquez González</strong>,
+                    Analista Programador.
+                    <a href="mailto:diegohen2005gonzales@gmail.com">diegohen2005gonzales@gmail.com</a>
+                    <span>·</span>
+                    <a href="https://wa.me/56997465007?text=Hola%20Diego%2C%20vi%20la%20p%C3%A1gina%20de%20Transportes%20Reyes%20y%20me%20interesa%20conversar%20sobre%20un%20sitio%20web." target="_blank" rel="noopener">+56 9 9746 5007</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BOTÓN WHATSAPP FLOTANTE ========== -->
+    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-float__text">¡Cotiza aquí!</span>
+    </a>
+
+    <!-- ========== BOTÓN SCROLL TOP ========== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- ========== VISOR DE FOTOS ========== -->
+    <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+        <button class="photo-lightbox__close" id="photoLightboxClose" type="button" aria-label="Cerrar imagen">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img class="photo-lightbox__img" id="photoLightboxImg" src="" alt="">
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
