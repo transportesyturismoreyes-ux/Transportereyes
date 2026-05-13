@@ -272,4 +272,15 @@ document.addEventListener('DOMContentLoaded', () => {
         li.style.cursor = 'default';
     });
 
+    // ---- Botones de cotización de flota → WhatsApp ----
+    document.querySelectorAll('.fleet-card').forEach(card => {
+        const title = card.dataset.quoteTitle?.trim() || card.querySelector('h3')?.textContent?.trim();
+        const button = card.querySelector('.btn--sm');
+
+        if (!title || !button) return;
+
+        const message = `Hola, estoy interesado/a en cotizar ${title}.`;
+        button.href = `https://wa.me/56936363564?text=${encodeURIComponent(message)}`;
+    });
+
 });
