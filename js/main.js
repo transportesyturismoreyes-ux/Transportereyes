@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.getElementById('heroDots');
     const prevBtn = document.getElementById('heroPrev');
     const nextBtn = document.getElementById('heroNext');
+    const heroVideo = document.querySelector('.hero__video');
     let currentSlide = 0;
     let slideInterval;
     let touchStartX = 0;
@@ -103,6 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlide = index;
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
+
+        if (heroVideo) {
+            if (currentSlide === 0) {
+                heroVideo.currentTime = 0;
+                heroVideo.play().catch(() => {});
+            } else {
+                heroVideo.pause();
+            }
+        }
     }
 
     function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
@@ -114,6 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function startInterval() { slideInterval = setInterval(nextSlide, 6000); }
     function resetInterval() { clearInterval(slideInterval); startInterval(); }
     startInterval();
+
+    if (heroVideo) {
+        heroVideo.play().catch(() => {});
+    }
 
     // Swipe táctil para el slider
     const heroEl = document.querySelector('.hero');
@@ -270,6 +284,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- Tooltip en iconos de flota ----
     document.querySelectorAll('.fleet-card__info li').forEach(li => {
         li.style.cursor = 'default';
+    });
+
+    // ---- Botones de servicios → WhatsApp ----
+    document.querySelectorAll('.service-card').forEach(card => {
+        const title = card.querySelector('h3')?.textContent?.trim();
+        const button = card.querySelector('.service-card__link');
+
+        if (!title || !button) return;
+
+        const message = `Hola, estoy interesado/a en consultar por ${title}.`;
+        button.href = `https://wa.me/56936363564?text=${encodeURIComponent(message)}`;
     });
 
     // ---- Botones de cotización de flota → WhatsApp ----
