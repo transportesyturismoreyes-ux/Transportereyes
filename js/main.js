@@ -126,6 +126,14 @@ document.addEventListener('DOMContentLoaded', () => {
     startInterval();
 
     if (heroVideo) {
+        const revealHeroVideo = () => heroVideo.classList.remove('hero__video--loading');
+
+        if (heroVideo.readyState >= 2) {
+            revealHeroVideo();
+        } else {
+            heroVideo.addEventListener('loadeddata', revealHeroVideo, { once: true });
+        }
+
         heroVideo.play().catch(() => {});
     }
 
