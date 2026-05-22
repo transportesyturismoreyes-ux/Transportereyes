@@ -621,19 +621,348 @@
 }
 
 /* ================================================
+   NOSOTROS — REDISEÑO CORPORATIVO LIMPIO
+   ================================================ */
+
+/* Layout principal: imagen izquierda, texto derecha */
+.about__container {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 56px;
+    align-items: start;
+}
+
+/* Columna imagen */
+.about__images {
+    position: relative;
+    align-self: start;
+}
+.about__img-main {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(13,45,107,0.18);
+    position: relative;
+    z-index: 1;
+}
+.about__img-main img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+}
+.about__img-main::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    border: 2px solid rgba(107,255,79,0.25);
+    pointer-events: none;
+}
+
+/* Badge de experiencia — esquina superior derecha de la imagen */
+.about__experience-badge {
+    position: absolute;
+    top: 24px;
+    right: -18px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: var(--dark);
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(107,255,79,0.5);
+    animation: float 4s ease-in-out infinite;
+    z-index: 3;
+    min-width: 130px;
+}
+.about__experience-badge i {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 6px;
+}
+.about__experience-badge span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+}
+.about__experience-badge strong {
+    font-size: 1.25rem;
+    font-weight: 900;
+    display: block;
+    line-height: 1.1;
+}
+
+/* Imagen secundaria (camioneta) — esquina inferior derecha */
+.about__img-secondary {
+    position: absolute;
+    bottom: -20px;
+    right: -18px;
+    width: 200px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(13,45,107,0.25);
+    border: 3px solid var(--white);
+    z-index: 2;
+}
+.about__img-secondary img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Columna contenido */
+.about__content {
+    padding-bottom: 20px;
+}
+.about__content .section-tag { margin-bottom: 10px; }
+.about__content .section-title {
+    text-align: left;
+    margin-bottom: 18px;
+    font-size: 2.1rem;
+}
+
+/* Párrafo introductorio */
+.about__lead-text {
+    font-size: 0.97rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Banner propósito */
+.about__purpose-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: linear-gradient(135deg, rgba(13,45,107,0.06), rgba(13,45,107,0.02));
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+}
+.about__purpose-banner i {
+    color: var(--accent-dark);
+    font-size: 1.3rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.about__purpose-banner p {
+    font-size: 0.92rem;
+    color: var(--gray-dark);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Especialización destacada */
+.about__specialty {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid var(--light-2);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 16px rgba(13,45,107,0.07);
+    transition: var(--transition);
+}
+.about__specialty:hover {
+    box-shadow: 0 8px 28px rgba(13,45,107,0.12);
+    border-color: rgba(107,255,79,0.3);
+}
+.about__specialty-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.about__specialty-icon i {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+.about__specialty h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+.about__specialty p {
+    font-size: 0.87rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bloque servicios con pills */
+.about__services-block {
+    margin-bottom: 20px;
+}
+.about__block-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.about__service-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.about__service-pills span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: var(--light);
+    border: 1px solid var(--light-2);
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray-dark);
+    transition: var(--transition);
+}
+.about__service-pills span:hover {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: var(--white);
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+.about__service-pills span i {
+    font-size: 0.8rem;
+    color: var(--accent-dark);
+}
+.about__service-pills span:hover i { color: var(--accent-light); }
+
+/* Compromisos */
+.about__commits {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.about__commit {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--light-2);
+    transition: var(--transition);
+}
+.about__commit:hover {
+    border-color: rgba(107,255,79,0.3);
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(13,45,107,0.08);
+}
+.about__commit i {
+    font-size: 1.2rem;
+    color: var(--accent-dark);
+    background: rgba(107,255,79,0.1);
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about__commit strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1px;
+}
+.about__commit span {
+    font-size: 0.78rem;
+    color: var(--gray);
+}
+
+/* ================================================
    RESPONSIVE MEJORADO
    ================================================ */
 @media (max-width: 1024px) {
     .hero__title { font-size: 2.8rem; }
+    .about__container { gap: 36px; }
+    .about__img-main img { height: 400px; }
 }
+
 @media (max-width: 768px) {
     .hero__title { font-size: 2rem; }
     .hero__text { font-size: 0.98rem; }
     .cta h2 { font-size: 1.9rem; }
     .stats__item { padding: 16px; }
     .hero__scroll-hint { display: none; }
+
+    /* Nosotros en móvil: una columna */
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .about__images {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .about__img-main img {
+        height: 260px;
+        object-position: center 30%;
+    }
+    .about__img-secondary {
+        width: 130px;
+        right: 8px;
+        bottom: -14px;
+    }
+    .about__img-secondary img { height: 95px; }
+    .about__experience-badge {
+        top: 12px;
+        right: 8px;
+        min-width: 110px;
+        padding: 12px 14px;
+    }
+    .about__experience-badge i { font-size: 1.2rem; }
+    .about__experience-badge strong { font-size: 1rem; }
+    .about__content {
+        padding-top: 30px;
+    }
+    .about__content .section-title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+    .about__content .section-tag {
+        display: flex;
+        justify-content: center;
+    }
+    .about__purpose-banner { flex-direction: row; }
+    .about__specialty { gap: 12px; }
+    .about__service-pills span { font-size: 0.76rem; padding: 5px 12px; }
 }
+
 @media (max-width: 480px) {
     .hero__title { font-size: 1.7rem; }
+    .about__img-main img { height: 220px; }
+    .about__img-secondary { display: none; }
+    .about__experience-badge {
+        top: 10px;
+        right: 6px;
+        min-width: 100px;
+        padding: 10px 12px;
+    }
+    .about__specialty { flex-direction: column; gap: 10px; }
+    .about__specialty-icon { width: 44px; height: 44px; }
 }
 
