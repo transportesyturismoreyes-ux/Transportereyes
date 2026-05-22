@@ -916,21 +916,36 @@
     }
     .about__images {
         max-width: 100%;
+        width: 100%;
         margin-right: 0;
+        padding-bottom: 34px;
+    }
+    .about__img-main {
+        width: 100%;
+        border-radius: 24px;
     }
     .about__img-main img {
-        height: 260px;
-        object-position: center 30%;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        object-position: center 42%;
     }
     .about__img-secondary {
-        width: 130px;
-        right: 8px;
-        bottom: -14px;
+        width: min(42vw, 160px);
+        right: 14px;
+        bottom: 0;
+        display: block;
     }
-    .about__img-secondary img { height: 95px; }
+    .about__img-secondary img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
     .about__experience-badge {
-        top: 12px;
-        right: 8px;
+        top: 14px;
+        left: 14px;
+        right: auto;
         min-width: 110px;
         padding: 12px 14px;
     }
@@ -954,15 +969,80 @@
 
 @media (max-width: 480px) {
     .hero__title { font-size: 1.7rem; }
-    .about__img-main img { height: 220px; }
-    .about__img-secondary { display: none; }
+    .about__images {
+        padding-bottom: 42px;
+    }
+    .about__img-main img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-position: center 44%;
+    }
+    .about__img-secondary {
+        display: block;
+        width: min(46vw, 150px);
+        right: 12px;
+        bottom: 0;
+    }
     .about__experience-badge {
-        top: 10px;
-        right: 6px;
+        top: 12px;
+        left: 12px;
+        right: auto;
         min-width: 100px;
         padding: 10px 12px;
     }
     .about__specialty { flex-direction: column; gap: 10px; }
     .about__specialty-icon { width: 44px; height: 44px; }
+}
+
+/* Ajuste final: imagen de Nosotros limpia en celulares estrechos */
+@media (max-width: 768px) {
+    .about__container {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .about__images {
+        width: 100% !important;
+        max-width: 520px !important;
+        margin: 0 auto !important;
+        padding: 0 0 48px !important;
+    }
+
+    .about__img-main {
+        width: 100% !important;
+        border-radius: 24px !important;
+    }
+
+    .about__img-main img {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3 !important;
+        object-fit: cover !important;
+        object-position: center 44% !important;
+    }
+
+    .about__img-secondary {
+        display: block !important;
+        width: min(44vw, 160px) !important;
+        right: 12px !important;
+        bottom: 0 !important;
+        left: auto !important;
+    }
+
+    .about__img-secondary img {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3 !important;
+        object-fit: cover !important;
+    }
+
+    .about__experience-badge {
+        top: 12px !important;
+        left: 12px !important;
+        right: auto !important;
+        min-width: 108px !important;
+        padding: 10px 12px !important;
+        border-radius: 16px !important;
+    }
 }
 

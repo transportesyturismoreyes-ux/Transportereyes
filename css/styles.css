@@ -1858,7 +1858,11 @@ input, select, textarea { font-family: var(--font); }
     .stats__item { flex-direction: column; text-align: center; }
 
     .about__container { grid-template-columns: 1fr; }
-    .about__images { max-width: 500px; margin: 0 auto; }
+    .about__images {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
     .about__content .section-title { text-align: center; }
     .about__content .section-tag { display: flex; justify-content: center; }
     .about__intro-card,
@@ -1944,7 +1948,7 @@ input, select, textarea { font-family: var(--font); }
     .tribute-section__photo img { height: 240px; }
     .tribute-section__content p { font-size: 0.95rem; }
     .stats__container { grid-template-columns: 1fr; }
-    .about__img-secondary { display: none; }
+    .about__img-secondary { display: block; }
     .history__photos--feature {
         grid-template-columns: minmax(0, 1fr) 82px;
         gap: 8px;
