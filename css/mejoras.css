@@ -1046,3 +1046,156 @@
     }
 }
 
+/* ================================================
+   VIDEO SHOWCASE — SECCIÓN PREMIUM
+   ================================================ */
+.video-showcase {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #0a3a9e 100%);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Patrón de fondo decorativo */
+.video-showcase::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 10% 50%, rgba(107,255,79,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 20%, rgba(107,255,79,0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.video-showcase__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.video-showcase__container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Texto izquierda --- */
+.video-showcase__text .section-tag {
+    margin-bottom: 16px;
+}
+.video-showcase__title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 18px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.video-showcase__title span {
+    color: var(--accent);
+}
+.video-showcase__desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    max-width: 420px;
+}
+.video-showcase__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.video-showcase__features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+.video-showcase__features li i {
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(107,255,79,0.5));
+}
+
+/* --- Player derecha --- */
+.video-showcase__player {
+    position: relative;
+}
+.video-showcase__frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(255,255,255,0.08);
+    background: #000;
+}
+.video-showcase__video {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    max-height: 420px;
+    object-fit: cover;
+    background: #000;
+}
+
+/* Borde verde animado alrededor del player */
+.video-showcase__frame::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--accent), transparent 50%, var(--primary-light));
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite;
+    opacity: 0.6;
+}
+@keyframes borderGlow {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 0.9; }
+}
+
+/* Etiqueta decorativa */
+.video-showcase__player::after {
+    content: '\f03d  Video oficial';
+    font-family: 'Font Awesome 6 Free', 'Poppins', sans-serif;
+    position: absolute;
+    top: -14px;
+    left: 24px;
+    background: var(--accent);
+    color: var(--dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(107,255,79,0.4);
+}
+
+/* ---- Responsive VIDEO ---- */
+@media (max-width: 900px) {
+    .video-showcase__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .video-showcase__title { font-size: 2rem; }
+    .video-showcase__desc { max-width: 100%; }
+    .video-showcase__player::after { display: none; }
+}
+@media (max-width: 480px) {
+    .video-showcase { padding: 64px 0; }
+    .video-showcase__title { font-size: 1.6rem; }
+    .video-showcase__video { max-height: 280px; }
+}
