@@ -1,5 +1,5 @@
 /* ================================================
-   TRANSPORTE Y TURISMO REYES — JavaScript Principal
+   TRANSPORTES Y TURISMO REYES — JavaScript Principal
    ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mensaje  = document.getElementById('mensaje').value.trim();
 
         const lines = [
-            '🚌 *Cotización — Transporte y Turismo Reyes*',
+            '*Cotización — Transportes y Turismo Reyes*',
             '',
             `*Nombre:* ${nombre}`,
             `*Teléfono:* ${telefono}`,
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!title || !button) return;
 
-        const message = `Hola, estoy interesado/a en consultar por ${title}.`;
+        const message = `Hola, estoy interesado/a en consultar por ${title} con Transportes y Turismo Reyes.`;
         button.href = `https://wa.me/56936363564?text=${encodeURIComponent(message)}`;
     });
 
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!title || !button) return;
 
-        const message = `Hola, estoy interesado/a en cotizar ${title}.`;
+        const message = `Hola, estoy interesado/a en cotizar el ${title} de Transportes y Turismo Reyes.`;
         button.href = `https://wa.me/56936363564?text=${encodeURIComponent(message)}`;
     });
 
