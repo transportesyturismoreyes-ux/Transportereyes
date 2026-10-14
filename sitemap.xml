@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://transportesyturismoreyes.cl/</loc>
-    <priority>1.00</priority>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/bus-playa-mercedes.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/volvo-salon-cama.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/scania-exterior.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/galeria-cordillera.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/galeria-ruta.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/hero-irizar-azul.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/ford-transit-ejecutivo.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/logo-corporativo-transparente.png</image:loc>
+    </image:image>
   </url>
 </urlset>

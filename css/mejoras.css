@@ -1199,3 +1199,285 @@
     .video-showcase__title { font-size: 1.6rem; }
     .video-showcase__video { max-height: 280px; }
 }
+
+/* ================================================
+   ANIVERSARIO (se activa sola en la semana del 10 de octubre)
+   ================================================ */
+[hidden] { display: none !important; }
+
+.anniversary {
+    --gold: #ffd166;
+    --gold-dark: #f4a72c;
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0;
+    color: rgba(255,255,255,0.88);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,209,102,0.18), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(107,255,79,0.14), transparent 45%),
+        linear-gradient(135deg, var(--primary-dark) 0%, #0a2f6b 55%, var(--primary) 100%);
+}
+.anniversary__container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+/* Sello con el número de años */
+.anniversary__seal {
+    position: relative;
+    width: 280px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 35% 30%, #fff3cf, var(--gold) 45%, var(--gold-dark));
+    color: var(--primary-dark);
+    box-shadow: 0 0 0 10px rgba(255,209,102,0.18), 0 0 0 22px rgba(255,209,102,0.08), 0 24px 60px rgba(0,0,0,0.35);
+    animation: anniversaryFloat 5s ease-in-out infinite;
+}
+.anniversary__seal::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    border: 2px dashed rgba(6,27,63,0.35);
+    animation: anniversarySpin 30s linear infinite;
+}
+.anniversary__seal-number {
+    font-size: 7rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -4px;
+}
+.anniversary__seal-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+.anniversary__seal-dates {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0.75;
+}
+
+/* Texto */
+.anniversary__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,209,102,0.15);
+    border: 1px solid rgba(255,209,102,0.45);
+    color: var(--gold);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+.anniversary__title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.anniversary__highlight {
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.anniversary__content p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+.anniversary__content strong { color: var(--white); }
+.anniversary__content .anniversary__lead { font-size: 1.12rem; }
+
+.anniversary__quote {
+    position: relative;
+    margin: 26px 0 30px;
+    padding: 22px 26px 22px 58px;
+    background: rgba(255,255,255,0.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--white);
+}
+.anniversary__quote > i {
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    color: var(--gold);
+    font-size: 1.3rem;
+}
+.anniversary__quote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.88rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--gold);
+}
+.anniversary__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* Confeti decorativo */
+.anniversary__confetti span {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 16px;
+    border-radius: 2px;
+    opacity: 0.85;
+    animation: anniversaryConfetti 9s linear infinite;
+}
+.anniversary__confetti span:nth-child(3n)   { background: var(--gold); }
+.anniversary__confetti span:nth-child(3n+1) { background: var(--accent); }
+.anniversary__confetti span:nth-child(3n+2) { background: var(--primary-light); }
+.anniversary__confetti span:nth-child(1)  { left: 4%;  animation-delay: 0s; }
+.anniversary__confetti span:nth-child(2)  { left: 12%; animation-delay: 3.5s; animation-duration: 11s; }
+.anniversary__confetti span:nth-child(3)  { left: 21%; animation-delay: 6s; }
+.anniversary__confetti span:nth-child(4)  { left: 30%; animation-delay: 1.5s; animation-duration: 12s; }
+.anniversary__confetti span:nth-child(5)  { left: 39%; animation-delay: 7.5s; }
+.anniversary__confetti span:nth-child(6)  { left: 48%; animation-delay: 2.5s; animation-duration: 10s; }
+.anniversary__confetti span:nth-child(7)  { left: 57%; animation-delay: 5s; }
+.anniversary__confetti span:nth-child(8)  { left: 66%; animation-delay: 0.8s; animation-duration: 13s; }
+.anniversary__confetti span:nth-child(9)  { left: 75%; animation-delay: 4.2s; }
+.anniversary__confetti span:nth-child(10) { left: 84%; animation-delay: 8s; animation-duration: 11s; }
+.anniversary__confetti span:nth-child(11) { left: 91%; animation-delay: 2s; }
+.anniversary__confetti span:nth-child(12) { left: 97%; animation-delay: 6.5s; animation-duration: 12s; }
+
+@keyframes anniversaryConfetti {
+    0%   { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(1100px) rotate(720deg); }
+}
+@keyframes anniversaryFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+@keyframes anniversarySpin {
+    to { transform: rotate(360deg); }
+}
+
+/* Enlace del menú durante el aniversario */
+.header__link--aniversario i { color: #f4a72c; margin-right: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .anniversary__seal,
+    .anniversary__seal::before { animation: none; }
+    .anniversary__confetti { display: none; }
+}
+
+@media (max-width: 900px) {
+    .anniversary { padding: 72px 0; }
+    .anniversary__container {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        text-align: center;
+    }
+    .anniversary__seal { width: 220px; }
+    .anniversary__seal-number { font-size: 5.5rem; }
+    .anniversary__title { font-size: 2.1rem; }
+    .anniversary__quote { text-align: left; }
+    .anniversary__actions { justify-content: center; }
+}
+@media (max-width: 480px) {
+    .anniversary__title { font-size: 1.75rem; }
+    .anniversary__seal { width: 190px; }
+    .anniversary__seal-number { font-size: 4.6rem; }
+    .anniversary__seal-label { font-size: 1.2rem; }
+    .anniversary__quote { padding: 18px 18px 18px 48px; font-size: 0.98rem; }
+    .anniversary__quote > i { left: 16px; top: 18px; font-size: 1.1rem; }
+    .anniversary__actions .btn { width: 100%; }
+}
+
+/* ================================================
+   PREGUNTAS FRECUENTES
+   ================================================ */
+.faq {
+    padding: 96px 0;
+    background: var(--light);
+}
+.faq__list {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.faq__item {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--light-2);
+    transition: var(--transition);
+}
+.faq__item[open] {
+    box-shadow: var(--shadow);
+    border-color: rgba(0,87,217,0.25);
+}
+.faq__item summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 60px 20px 24px;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--dark);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+    content: '+';
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+.faq__item[open] summary::after {
+    content: '\2212';
+    background: var(--primary);
+    color: var(--white);
+}
+.faq__item summary:hover { color: var(--primary); }
+.faq__item p {
+    padding: 0 24px 22px;
+    color: var(--gray-dark);
+}
+.faq__item p a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .faq { padding: 64px 0; }
+    .faq__item summary { padding: 16px 52px 16px 18px; font-size: 0.95rem; }
+    .faq__item summary::after { right: 14px; }
+    .faq__item p { padding: 0 18px 18px; font-size: 0.92rem; }
+}

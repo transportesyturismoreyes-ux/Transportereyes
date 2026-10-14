@@ -8,6 +8,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    // ---- Años de trayectoria automáticos (desde el 10.10.2013) ----
+    const today = new Date();
+
+    function yearsSince(isoDate) {
+        const [y, m, d] = isoDate.split('-').map(Number);
+        let years = today.getFullYear() - y;
+        const beforeAnniversary = today.getMonth() + 1 < m || (today.getMonth() + 1 === m && today.getDate() < d);
+        if (beforeAnniversary) years--;
+        return years;
+    }
+
+    document.querySelectorAll('[data-years-since]').forEach(el => {
+        el.textContent = yearsSince(el.dataset.yearsSince);
+    });
+    document.querySelectorAll('[data-current-year]').forEach(el => {
+        el.textContent = today.getFullYear();
+    });
+
+    // ---- Aniversario automático ----
+    // Cada año, la sección "Aniversario" aparece sola durante la semana del 10 de octubre
+    // (del 6 al 19 de octubre). Para verla en otra fecha: agregar ?aniversario a la URL.
+    const ANIVERSARIO_MES = 10;   // octubre
+    const ANIVERSARIO_DESDE = 6;
+    const ANIVERSARIO_HASTA = 19;
+    const anniversarySection = document.getElementById('aniversario');
+    const forceAnniversary = new URLSearchParams(window.location.search).has('aniversario');
+    const isAnniversaryWeek = today.getMonth() + 1 === ANIVERSARIO_MES
+        && today.getDate() >= ANIVERSARIO_DESDE
+        && today.getDate() <= ANIVERSARIO_HASTA;
+
+    if (anniversarySection && (isAnniversaryWeek || forceAnniversary)) {
+        const years = yearsSince('2013-10-10');
+        anniversarySection.hidden = false;
+        document.querySelectorAll('.header__link--aniversario').forEach(link => { link.hidden = false; });
+
+        const heroBadge = document.getElementById('heroBadge');
+        if (heroBadge) heroBadge.textContent = `🎉 Celebramos ${years} años viajando contigo`;
+    }
+
+    // ---- Fecha mínima del formulario = hoy ----
+    const fechaInput = document.getElementById('fecha');
+    if (fechaInput) {
+        const pad = n => String(n).padStart(2, '0');
+        fechaInput.min = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+    }
+
     // ---- Barra de progreso de scroll ----
     const progressBar = document.getElementById('scroll-progress');
     if (progressBar) {
