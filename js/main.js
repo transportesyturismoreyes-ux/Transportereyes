@@ -394,6 +394,51 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight' && lightboxItems.length > 1) showLightboxItem(lightboxIndex + 1);
     });
 
+    // ---- Reel "Más Actividades" ----
+    // Se reproduce sin sonido al aparecer en pantalla y se pausa al salir (solo descarga el video cuando se ve).
+    const activitiesVideo = document.getElementById('activitiesVideo');
+    if (activitiesVideo) {
+        const phone = activitiesVideo.closest('.activities__phone');
+        const playBtn = document.getElementById('activitiesPlay');
+        const soundBtn = document.getElementById('activitiesSound');
+        const progress = document.getElementById('activitiesProgress');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let userPaused = false;
+
+        const playReel = () => activitiesVideo.play().catch(() => {});
+
+        activitiesVideo.addEventListener('play', () => phone.classList.add('playing'));
+        activitiesVideo.addEventListener('pause', () => phone.classList.remove('playing'));
+        activitiesVideo.addEventListener('timeupdate', () => {
+            if (activitiesVideo.duration) {
+                progress.style.width = `${(activitiesVideo.currentTime / activitiesVideo.duration) * 100}%`;
+            }
+        });
+
+        playBtn.addEventListener('click', () => { userPaused = false; playReel(); });
+        activitiesVideo.addEventListener('click', () => {
+            if (activitiesVideo.paused) { userPaused = false; playReel(); }
+            else { userPaused = true; activitiesVideo.pause(); }
+        });
+
+        soundBtn.addEventListener('click', () => {
+            activitiesVideo.muted = !activitiesVideo.muted;
+            const on = !activitiesVideo.muted;
+            soundBtn.classList.toggle('on', on);
+            soundBtn.setAttribute('aria-label', on ? 'Silenciar' : 'Activar sonido');
+            soundBtn.querySelector('i').className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+            if (on && activitiesVideo.paused) { userPaused = false; playReel(); }
+        });
+
+        const reelObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !userPaused && !reduceMotion) playReel();
+                if (!entry.isIntersecting && !activitiesVideo.paused) activitiesVideo.pause();
+            });
+        }, { threshold: 0.5 });
+        reelObserver.observe(activitiesVideo);
+    }
+
     // ---- Contact Form → WhatsApp ----
     const contactForm = document.getElementById('contactForm');
 

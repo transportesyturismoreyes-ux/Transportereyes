@@ -115,6 +115,18 @@
           "publisher": { "@id": "https://transportesyturismoreyes.cl/#empresa" }
         },
         {
+          "@type": "VideoObject",
+          "name": "Salida a Zoopinto con el Grupo Scout San Bernardo de Chillán Viejo",
+          "description": "Transportes y Turismo Reyes traslada al Grupo Scout San Bernardo de Chillán Viejo a una jornada de naturaleza, aprendizaje y aventura en Zoopinto.",
+          "thumbnailUrl": "https://transportesyturismoreyes.cl/images/salida-zoopinto-portada.jpg",
+          "contentUrl": "https://transportesyturismoreyes.cl/images/salida-zoopinto-grupo-scout.mp4",
+          "uploadDate": "2026-11-08T21:43:57-03:00",
+          "duration": "PT40S",
+          "publisher": {
+            "@id": "https://transportesyturismoreyes.cl/#empresa"
+          }
+        },
+        {
           "@type": "FAQPage",
           "@id": "https://transportesyturismoreyes.cl/#preguntas",
           "mainEntity": [
@@ -174,8 +186,8 @@
 
     <link rel="icon" type="image/png" href="images/logo-corporativo-transparente.png">
     <link rel="apple-touch-icon" href="images/logo-corporativo-transparente.png">
-    <link rel="stylesheet" href="css/styles.css?v=20261108">
-    <link rel="stylesheet" href="css/mejoras.css?v=20261108">
+    <link rel="stylesheet" href="css/styles.css?v=20261108b">
+    <link rel="stylesheet" href="css/mejoras.css?v=20261108b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1059,6 +1071,98 @@
         </div>
     </section>
 
+    <!-- ========== MÁS ACTIVIDADES (reel) ========== -->
+    <section class="activities" id="actividades">
+        <div class="container">
+            <div class="activities__container">
+
+                <!-- Reel en marco de celular -->
+                <div class="activities__phone-wrap">
+                    <div class="activities__phone">
+                        <div class="activities__notch" aria-hidden="true"></div>
+                        <video
+                            class="activities__video"
+                            id="activitiesVideo"
+                            muted
+                            loop
+                            playsinline
+                            preload="none"
+                            poster="images/salida-zoopinto-portada.jpg"
+                            aria-label="Video: salida a Zoopinto con el Grupo Scout San Bernardo de Chillán Viejo">
+                            <source src="images/salida-zoopinto-grupo-scout.mp4" type="video/mp4">
+                        </video>
+                        <span class="activities__reel-badge"><i class="fa-solid fa-circle-play"></i> Reel</span>
+                        <button class="activities__play" id="activitiesPlay" type="button" aria-label="Reproducir video">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button class="activities__sound" id="activitiesSound" type="button" aria-label="Activar sonido">
+                            <i class="fa-solid fa-volume-xmark"></i> <span>Activar sonido</span>
+                        </button>
+                        <div class="activities__progress" aria-hidden="true"><span id="activitiesProgress"></span></div>
+                    </div>
+                    <span class="activities__float activities__float--top"><i class="fa-solid fa-paw"></i> Zoopinto</span>
+                    <span class="activities__float activities__float--bottom"><i class="fa-solid fa-campground"></i> Aventura Scout</span>
+                </div>
+
+                <!-- Historia de la actividad -->
+                <div class="activities__content">
+                    <span class="section-tag">Más Actividades</span>
+                    <h2 class="section-title">Salidas que se convierten en <span>recuerdos</span></h2>
+
+                    <div class="activities__event">
+                        <span class="activities__event-icon"><i class="fa-solid fa-route"></i></span>
+                        <div>
+                            <h3>Salida a Zoopinto</h3>
+                            <p>Grupo Scout San Bernardo de Chillán Viejo</p>
+                        </div>
+                    </div>
+
+                    <p class="activities__text">
+                        Llevamos al <strong>Grupo Scout San Bernardo de Chillán Viejo</strong> a vivir una jornada de
+                        naturaleza, aprendizaje y aventura en <strong>Zoopinto</strong>. Tucanes, guacamayos, ciervos y
+                        muchas sonrisas: así se ve un viaje bien organizado, desde que suben al bus hasta que vuelven a casa.
+                    </p>
+
+                    <div class="activities__chips">
+                        <span><i class="fa-solid fa-leaf"></i> Naturaleza</span>
+                        <span><i class="fa-solid fa-book-open"></i> Aprendizaje</span>
+                        <span><i class="fa-solid fa-compass"></i> Aventura</span>
+                    </div>
+
+                    <ul class="activities__trust">
+                        <li><i class="fa-solid fa-children"></i> Experiencia con colegios, scouts y agrupaciones</li>
+                        <li><i class="fa-solid fa-id-card"></i> Conductores certificados</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Monitoreo GPS en ruta</li>
+                    </ul>
+
+                    <div class="activities__actions">
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20vi%20la%20salida%20a%20Zoopinto%20en%20su%20p%C3%A1gina%20y%20quiero%20cotizar%20una%20salida%20para%20mi%20grupo%2C%20colegio%20o%20agrupaci%C3%B3n%20con%20Transportes%20y%20Turismo%20Reyes." class="btn btn--primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> Planifica la salida de tu grupo
+                        </a>
+                        <a href="https://www.tiktok.com/@transportes.y.tur7" class="activities__social" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-tiktok"></i> Mira más en TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ideas de destinos → WhatsApp -->
+            <div class="activities__ideas">
+                <h3><i class="fa-solid fa-lightbulb"></i> Ideas para tu próxima salida</h3>
+                <p>Toca un destino y te enviamos la cotización por WhatsApp.</p>
+                <div class="activities__ideas-list">
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20Zoopinto%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-paw"></i> Zoopinto</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20al%20Santuario%20Cuna%20de%20Prat%2C%20Ninhue%2C%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-anchor"></i> Cuna de Prat, Ninhue</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20las%20Termas%20de%20Chill%C3%A1n%20y%20Valle%20Las%20Trancas%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-mountain-sun"></i> Termas de Chillán y Las Trancas</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20los%20Saltos%20del%20Laja%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-water"></i> Saltos del Laja</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20la%20playa%20de%20Cobquecura%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-umbrella-beach"></i> Cobquecura</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20Dichato%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-sun"></i> Dichato</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20con%20Transportes%20y%20Turismo%20Reyes.%20El%20destino%20es%3A%20" target="_blank" rel="noopener" class="activities__ideas-other"><i class="fa-solid fa-plus"></i> Otro destino</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== CTA / BANNER ========== -->
     <section class="cta">
         <div class="cta__bg" style="background-image: url('images/cta-bg.jpg');"></div>
@@ -1306,6 +1410,7 @@
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#flota">Nuestra Flota</a></li>
                         <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#actividades">Más Actividades</a></li>
                         <li><a href="#preguntas">Preguntas Frecuentes</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
@@ -1377,7 +1482,7 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=20261108"></script>
+    <script src="js/main.js?v=20261108b"></script>
 </body>
 </html>
 
