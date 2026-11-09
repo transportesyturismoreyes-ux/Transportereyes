@@ -127,6 +127,18 @@
           }
         },
         {
+          "@type": "VideoObject",
+          "name": "Servicio especial del Colegio Padre Hurtado de Chillán al Museo Interactivo Mirador",
+          "description": "Transportes y Turismo Reyes realiza el servicio especial de los estudiantes del Colegio Padre Hurtado de Chillán al Museo Interactivo Mirador.",
+          "thumbnailUrl": "https://transportesyturismoreyes.cl/images/salida-museo-colegio-padre-hurtado-portada.jpg",
+          "contentUrl": "https://transportesyturismoreyes.cl/images/salida-museo-colegio-padre-hurtado.mp4",
+          "uploadDate": "2026-11-08T21:48:40-03:00",
+          "duration": "PT24S",
+          "publisher": {
+            "@id": "https://transportesyturismoreyes.cl/#empresa"
+          }
+        },
+        {
           "@type": "FAQPage",
           "@id": "https://transportesyturismoreyes.cl/#preguntas",
           "mainEntity": [
@@ -186,8 +198,8 @@
 
     <link rel="icon" type="image/png" href="images/logo-corporativo-transparente.png">
     <link rel="apple-touch-icon" href="images/logo-corporativo-transparente.png">
-    <link rel="stylesheet" href="css/styles.css?v=20261108b">
-    <link rel="stylesheet" href="css/mejoras.css?v=20261108b">
+    <link rel="stylesheet" href="css/styles.css?v=20261108c">
+    <link rel="stylesheet" href="css/mejoras.css?v=20261108c">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1082,7 +1094,6 @@
                         <div class="activities__notch" aria-hidden="true"></div>
                         <video
                             class="activities__video"
-                            id="activitiesVideo"
                             muted
                             loop
                             playsinline
@@ -1092,13 +1103,13 @@
                             <source src="images/salida-zoopinto-grupo-scout.mp4" type="video/mp4">
                         </video>
                         <span class="activities__reel-badge"><i class="fa-solid fa-circle-play"></i> Reel</span>
-                        <button class="activities__play" id="activitiesPlay" type="button" aria-label="Reproducir video">
+                        <button class="activities__play" type="button" aria-label="Reproducir video">
                             <i class="fa-solid fa-play"></i>
                         </button>
-                        <button class="activities__sound" id="activitiesSound" type="button" aria-label="Activar sonido">
+                        <button class="activities__sound" type="button" aria-label="Activar sonido">
                             <i class="fa-solid fa-volume-xmark"></i> <span>Activar sonido</span>
                         </button>
-                        <div class="activities__progress" aria-hidden="true"><span id="activitiesProgress"></span></div>
+                        <div class="activities__progress" aria-hidden="true"><span></span></div>
                     </div>
                     <span class="activities__float activities__float--top"><i class="fa-solid fa-paw"></i> Zoopinto</span>
                     <span class="activities__float activities__float--bottom"><i class="fa-solid fa-campground"></i> Aventura Scout</span>
@@ -1146,6 +1157,69 @@
                 </div>
             </div>
 
+            <!-- Actividad 2: Colegio Padre Hurtado (zigzag: video a la derecha) -->
+            <div class="activities__container activities__container--reverse">
+                <div class="activities__phone-wrap">
+                    <div class="activities__phone">
+                        <div class="activities__notch" aria-hidden="true"></div>
+                        <video
+                            class="activities__video"
+                            muted
+                            loop
+                            playsinline
+                            preload="none"
+                            poster="images/salida-museo-colegio-padre-hurtado-portada.jpg"
+                            aria-label="Video: servicio especial del Colegio Padre Hurtado de Chillán al Museo Interactivo Mirador">
+                            <source src="images/salida-museo-colegio-padre-hurtado.mp4" type="video/mp4">
+                        </video>
+                        <span class="activities__reel-badge"><i class="fa-solid fa-circle-play"></i> Reel</span>
+                        <button class="activities__play" type="button" aria-label="Reproducir video">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button class="activities__sound" type="button" aria-label="Activar sonido">
+                            <i class="fa-solid fa-volume-xmark"></i> <span>Activar sonido</span>
+                        </button>
+                        <div class="activities__progress" aria-hidden="true"><span></span></div>
+                    </div>
+                    <span class="activities__float activities__float--top"><i class="fa-solid fa-flask"></i> Museo Interactivo</span>
+                    <span class="activities__float activities__float--bottom"><i class="fa-solid fa-school"></i> Salida pedagógica</span>
+                </div>
+
+                <div class="activities__content">
+                    <div class="activities__event">
+                        <span class="activities__event-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <div>
+                            <h3>Servicio especial al Museo Interactivo Mirador</h3>
+                            <p>Colegio Padre Hurtado de Chillán · San Nicolás</p>
+                        </div>
+                    </div>
+
+                    <p class="activities__text">
+                        Acompañamos a los estudiantes del <strong>Colegio Padre Hurtado de Chillán</strong> en su
+                        servicio especial al <strong>Museo Interactivo Mirador</strong>. Un día para aprender jugando,
+                        descubrir la ciencia de cerca y volver a casa con muchas historias que contar.
+                    </p>
+
+                    <div class="activities__chips">
+                        <span><i class="fa-solid fa-flask"></i> Ciencia</span>
+                        <span><i class="fa-solid fa-lightbulb"></i> Descubrimiento</span>
+                        <span><i class="fa-solid fa-people-group"></i> Convivencia</span>
+                    </div>
+
+                    <ul class="activities__trust">
+                        <li><i class="fa-solid fa-school"></i> Especialistas en transporte escolar y salidas pedagógicas</li>
+                        <li><i class="fa-solid fa-bus"></i> Buses amplios para cursos completos</li>
+                        <li><i class="fa-solid fa-shield-halved"></i> Seguridad en cada trayecto</li>
+                    </ul>
+
+                    <div class="activities__actions">
+                        <a href="https://wa.me/56936363564?text=Hola%2C%20soy%20de%20un%20colegio%20y%20quiero%20cotizar%20una%20salida%20pedag%C3%B3gica%20con%20Transportes%20y%20Turismo%20Reyes." class="btn btn--primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i> Cotiza la salida de tu colegio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Ideas de destinos → WhatsApp -->
             <div class="activities__ideas">
                 <h3><i class="fa-solid fa-lightbulb"></i> Ideas para tu próxima salida</h3>
@@ -1153,6 +1227,7 @@
                 <div class="activities__ideas-list">
                     <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20Zoopinto%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-paw"></i> Zoopinto</a>
                     <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20al%20Santuario%20Cuna%20de%20Prat%2C%20Ninhue%2C%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-anchor"></i> Cuna de Prat, Ninhue</a>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20al%20Museo%20Interactivo%20Mirador%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-flask"></i> Museo Interactivo Mirador</a>
                     <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20las%20Termas%20de%20Chill%C3%A1n%20y%20Valle%20Las%20Trancas%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-mountain-sun"></i> Termas de Chillán y Las Trancas</a>
                     <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20los%20Saltos%20del%20Laja%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-water"></i> Saltos del Laja</a>
                     <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20una%20salida%20a%20la%20playa%20de%20Cobquecura%20con%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener"><i class="fa-solid fa-umbrella-beach"></i> Cobquecura</a>
@@ -1482,7 +1557,7 @@
         </div>
     </div>
 
-    <script src="js/main.js?v=20261108b"></script>
+    <script src="js/main.js?v=20261108c"></script>
 </body>
 </html>
 
