@@ -174,8 +174,8 @@
 
     <link rel="icon" type="image/png" href="images/logo-corporativo-transparente.png">
     <link rel="apple-touch-icon" href="images/logo-corporativo-transparente.png">
-    <link rel="stylesheet" href="css/styles.css?v=20261013">
-    <link rel="stylesheet" href="css/mejoras.css?v=20261013">
+    <link rel="stylesheet" href="css/styles.css?v=20261108">
+    <link rel="stylesheet" href="css/mejoras.css?v=20261108">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1019,6 +1019,43 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Álbum: Servicio especial Santuario Cuna de Prat -->
+            <div class="gallery-album" id="santuario-cuna-de-prat">
+                <div class="gallery-album__header">
+                    <span class="gallery-album__tag"><i class="fa-solid fa-star"></i> Servicio Especial</span>
+                    <h3 class="gallery-album__title">Santuario Cuna de Prat, <span>Ninhue</span></h3>
+                    <p class="gallery-album__text">
+                        Realizamos un servicio especial al Santuario Cuna de Prat, en Ninhue, Región de Ñuble,
+                        lugar de nacimiento del héroe naval Arturo Prat. Un viaje lleno de historia y naturaleza,
+                        con la comodidad y seguridad de siempre.
+                    </p>
+                </div>
+                <div class="gallery-album__grid">
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-monumento.jpeg" data-lightbox-alt="Monumento a Arturo Prat en el Santuario Cuna de Prat, Ninhue" aria-label="Ver foto ampliada: monumento a Arturo Prat en el Santuario Cuna de Prat">
+                        <img src="images/santuario-cuna-de-prat-monumento.jpeg" alt="Monumento a Arturo Prat en el Santuario Cuna de Prat, Ninhue" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-bus-irizar-1.jpeg" data-lightbox-alt="Bus Reyes en el Santuario Cuna de Prat, Ninhue" aria-label="Ver foto ampliada: bus Reyes en el Santuario Cuna de Prat">
+                        <img src="images/santuario-cuna-de-prat-bus-irizar-1.jpeg" alt="Bus Reyes en el Santuario Cuna de Prat, Ninhue" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-bus-irizar-2.jpeg" data-lightbox-alt="Bus Reyes estacionado en el Santuario Cuna de Prat, rodeado de cerros" aria-label="Ver foto ampliada: bus Reyes estacionado en el Santuario Cuna de Prat">
+                        <img src="images/santuario-cuna-de-prat-bus-irizar-2.jpeg" alt="Bus Reyes estacionado en el Santuario Cuna de Prat, rodeado de cerros" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-bus-azul.jpeg" data-lightbox-alt="Bus Irizar azul de Reyes en Ninhue, Región de Ñuble" aria-label="Ver foto ampliada: bus Irizar azul de Reyes en Ninhue">
+                        <img src="images/santuario-cuna-de-prat-bus-azul.jpeg" alt="Bus Irizar azul de Reyes en Ninhue, Región de Ñuble" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                </div>
+                <div class="gallery-album__cta">
+                    <p>¿Quieres organizar un viaje especial para tu grupo, colegio o institución?</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20especial%20al%20Santuario%20Cuna%20de%20Prat%2C%20Ninhue%2C%20con%20Transportes%20y%20Turismo%20Reyes." class="btn btn--primary" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i> Cotizar un servicio especial
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1324,10 +1361,23 @@
         <button class="photo-lightbox__close" id="photoLightboxClose" type="button" aria-label="Cerrar imagen">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <img class="photo-lightbox__img" id="photoLightboxImg" src="" alt="">
+        <button class="photo-lightbox__nav photo-lightbox__nav--prev" id="photoLightboxPrev" type="button" aria-label="Foto anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="photo-lightbox__stage" id="photoLightboxStage">
+            <img class="photo-lightbox__img" id="photoLightboxImg" src="" alt="" title="Toca para hacer zoom">
+        </div>
+        <button class="photo-lightbox__nav photo-lightbox__nav--next" id="photoLightboxNext" type="button" aria-label="Foto siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="photo-lightbox__caption">
+            <span id="photoLightboxCaption"></span>
+            <span class="photo-lightbox__counter" id="photoLightboxCounter"></span>
+            <span class="photo-lightbox__hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Toca la foto para hacer zoom</span>
+        </div>
     </div>
 
-    <script src="js/main.js?v=20261013"></script>
+    <script src="js/main.js?v=20261108"></script>
 </body>
 </html>
 

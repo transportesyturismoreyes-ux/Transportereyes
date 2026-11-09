@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://transportesyturismoreyes.cl/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -29,6 +29,18 @@
     </image:image>
     <image:image>
       <image:loc>https://transportesyturismoreyes.cl/images/logo-corporativo-transparente.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/santuario-cuna-de-prat-monumento.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/santuario-cuna-de-prat-bus-irizar-1.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/santuario-cuna-de-prat-bus-irizar-2.jpeg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://transportesyturismoreyes.cl/images/santuario-cuna-de-prat-bus-azul.jpeg</image:loc>
     </image:image>
   </url>
 </urlset>

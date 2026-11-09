@@ -267,30 +267,131 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoLightbox = document.getElementById('photoLightbox');
     const photoLightboxImg = document.getElementById('photoLightboxImg');
     const photoLightboxClose = document.getElementById('photoLightboxClose');
+    const photoLightboxStage = document.getElementById('photoLightboxStage');
+    const photoLightboxPrev = document.getElementById('photoLightboxPrev');
+    const photoLightboxNext = document.getElementById('photoLightboxNext');
+    const photoLightboxCaption = document.getElementById('photoLightboxCaption');
+    const photoLightboxCounter = document.getElementById('photoLightboxCounter');
+    let lightboxItems = [];
+    let lightboxIndex = 0;
+    let lightboxTrigger = null;
 
-    function openPhotoLightbox(src, alt) {
-        photoLightboxImg.src = src;
-        photoLightboxImg.alt = alt || '';
+    // Las tarjetas de la galería también se abren en el visor
+    document.querySelectorAll('.dest-card').forEach(card => {
+        const img = card.querySelector('img');
+        if (!img) return;
+        const title = card.querySelector('h3')?.textContent?.trim();
+        card.dataset.lightboxSrc = img.getAttribute('src');
+        card.dataset.lightboxAlt = title ? `${title} — ${img.alt}` : img.alt;
+        card.dataset.lightboxGroup = 'galeria';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Ver foto ampliada: ${img.alt}`);
+    });
+
+    function setLightboxZoom(zoomed, e) {
+        photoLightboxStage.classList.toggle('zoomed', zoomed);
+        if (zoomed && e) moveLightboxZoom(e);
+        if (!zoomed) photoLightboxImg.style.transformOrigin = '';
+    }
+
+    function moveLightboxZoom(e) {
+        const point = e.touches ? e.touches[0] : e;
+        const rect = photoLightboxImg.getBoundingClientRect();
+        const x = Math.min(Math.max((point.clientX - rect.left) / rect.width, 0), 1) * 100;
+        const y = Math.min(Math.max((point.clientY - rect.top) / rect.height, 0), 1) * 100;
+        photoLightboxImg.style.transformOrigin = `${x}% ${y}%`;
+    }
+
+    function showLightboxItem(index) {
+        lightboxIndex = (index + lightboxItems.length) % lightboxItems.length;
+        const item = lightboxItems[lightboxIndex];
+        setLightboxZoom(false);
+        photoLightboxImg.src = item.dataset.lightboxSrc;
+        photoLightboxImg.alt = item.dataset.lightboxAlt || '';
+        photoLightboxCaption.textContent = item.dataset.lightboxAlt || '';
+        const multiple = lightboxItems.length > 1;
+        photoLightboxCounter.textContent = multiple ? `${lightboxIndex + 1} / ${lightboxItems.length}` : '';
+        photoLightboxPrev.hidden = !multiple;
+        photoLightboxNext.hidden = !multiple;
+    }
+
+    function openPhotoLightbox(trigger) {
+        const group = trigger.dataset.lightboxGroup;
+        lightboxItems = group
+            ? Array.from(document.querySelectorAll(`[data-lightbox-group="${group}"]`))
+            : [trigger];
+        lightboxTrigger = trigger;
+        showLightboxItem(lightboxItems.indexOf(trigger));
         photoLightbox.classList.add('open');
         photoLightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        photoLightboxClose.focus();
     }
 
     function closePhotoLightbox() {
         photoLightbox.classList.remove('open');
         photoLightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        setLightboxZoom(false);
         setTimeout(() => { photoLightboxImg.src = ''; }, 350);
+        if (lightboxTrigger) lightboxTrigger.focus({ preventScroll: true });
     }
 
-    document.querySelectorAll('[data-lightbox-src]').forEach(btn => {
-        btn.addEventListener('click', () => openPhotoLightbox(btn.dataset.lightboxSrc, btn.dataset.lightboxAlt));
+    document.querySelectorAll('[data-lightbox-src]').forEach(trigger => {
+        trigger.addEventListener('click', () => openPhotoLightbox(trigger));
+        if (trigger.tagName !== 'BUTTON') {
+            trigger.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPhotoLightbox(trigger); }
+            });
+        }
     });
 
+    photoLightboxPrev.addEventListener('click', () => showLightboxItem(lightboxIndex - 1));
+    photoLightboxNext.addEventListener('click', () => showLightboxItem(lightboxIndex + 1));
     photoLightboxClose.addEventListener('click', closePhotoLightbox);
-    photoLightbox.addEventListener('click', e => { if (e.target === photoLightbox) closePhotoLightbox(); });
+    photoLightbox.addEventListener('click', e => {
+        if (e.target === photoLightbox || e.target === photoLightboxStage) closePhotoLightbox();
+    });
+
+    // Zoom: tocar/clic en la foto acerca o aleja; al estar con zoom, mover el dedo o el mouse recorre la foto
+    photoLightboxImg.addEventListener('click', e => {
+        e.stopPropagation();
+        if (lightboxSwiped) return;
+        setLightboxZoom(!photoLightboxStage.classList.contains('zoomed'), e);
+    });
+    photoLightboxImg.addEventListener('mousemove', e => {
+        if (photoLightboxStage.classList.contains('zoomed')) moveLightboxZoom(e);
+    });
+
+    // Deslizar para cambiar de foto (sin zoom) o recorrer la foto (con zoom)
+    let lightboxTouchX = 0;
+    let lightboxSwiped = false;
+    photoLightboxStage.addEventListener('touchstart', e => {
+        lightboxTouchX = e.touches[0].clientX;
+        lightboxSwiped = false;
+    }, { passive: true });
+    photoLightboxStage.addEventListener('touchmove', e => {
+        if (photoLightboxStage.classList.contains('zoomed')) {
+            e.preventDefault();
+            moveLightboxZoom(e);
+        }
+    }, { passive: false });
+    photoLightboxStage.addEventListener('touchend', e => {
+        if (photoLightboxStage.classList.contains('zoomed') || lightboxItems.length < 2) return;
+        const diff = lightboxTouchX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+            lightboxSwiped = true;
+            showLightboxItem(lightboxIndex + (diff > 0 ? 1 : -1));
+            setTimeout(() => { lightboxSwiped = false; }, 400);
+        }
+    });
+
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && photoLightbox.classList.contains('open')) closePhotoLightbox();
+        if (!photoLightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closePhotoLightbox();
+        if (e.key === 'ArrowLeft' && lightboxItems.length > 1) showLightboxItem(lightboxIndex - 1);
+        if (e.key === 'ArrowRight' && lightboxItems.length > 1) showLightboxItem(lightboxIndex + 1);
     });
 
     // ---- Contact Form → WhatsApp ----
