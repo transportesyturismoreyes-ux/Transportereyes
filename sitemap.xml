@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://transportesyturismoreyes.cl/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -49,4 +49,10 @@
       <image:loc>https://transportesyturismoreyes.cl/images/santuario-cuna-de-prat-bus-azul.jpeg</image:loc>
     </image:image>
   </url>
+  <url><loc>https://transportesyturismoreyes.cl/servicios.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://transportesyturismoreyes.cl/flota.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://transportesyturismoreyes.cl/homenaje.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://transportesyturismoreyes.cl/galeria.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://transportesyturismoreyes.cl/actividades.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://transportesyturismoreyes.cl/contacto.html</loc><lastmod>2026-11-19</lastmod></url>
 </urlset>

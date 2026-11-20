@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de viajes | Transportes y Turismo Reyes</title>
+    <meta name="description" content="Fotos de los buses Reyes recorriendo Chile y álbum del servicio especial al Santuario Cuna de Prat en Ninhue.">
+    <meta name="theme-color" content="#061b3f">
+    <link rel="canonical" href="https://transportesyturismoreyes.cl/galeria.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="Transportes y Turismo Reyes">
+    <meta property="og:title" content="Galería de viajes | Transportes y Turismo Reyes">
+    <meta property="og:description" content="Fotos de los buses Reyes recorriendo Chile y álbum del servicio especial al Santuario Cuna de Prat en Ninhue.">
+    <meta property="og:url" content="https://transportesyturismoreyes.cl/galeria.html">
+    <meta property="og:image" content="https://transportesyturismoreyes.cl/images/bus-playa-mercedes.jpeg">
+    <link rel="icon" type="image/png" href="images/logo-corporativo-transparente.png">
+    <link rel="apple-touch-icon" href="images/logo-corporativo-transparente.png">
+    <link rel="stylesheet" href="css/styles.css?v=20261119">
+    <link rel="stylesheet" href="css/mejoras.css?v=20261119">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navigation.css?v=20261119c">
+    <script src="js/main.js?v=20261119c" defer></script>
+</head>
+<body class="site-inner">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <header class="site-header" id="header">
+        <div class="container site-header__inner">
+            <a href="./" class="site-header__logo">
+                <img src="images/logo-corporativo-transparente.png" alt="Transportes y Turismo Reyes" width="184" height="62">
+            </a>
+            <button class="site-header__toggle" id="navToggle" type="button" aria-controls="nav" aria-expanded="false">
+                <span class="site-header__menu-hint" aria-hidden="true">Más información <span>&rarr;</span></span>
+                <span class="site-header__toggle-label">Menú</span>
+            </button>
+            <nav class="site-nav" id="nav" aria-label="Navegación principal">
+                <a class="site-nav__item" href="./">Inicio</a>
+                <details class="site-nav__group">
+                    <summary class="site-nav__item">Servicios</summary>
+                    <div class="site-nav__panel">
+                        <a href="servicios.html">Todos los servicios</a>
+                        <a href="servicios.html#escolar">Transporte escolar</a>
+                        <a href="servicios.html#giras">Giras de estudio</a>
+                        <a href="servicios.html#turismo">Turismo y excursiones</a>
+                        <a href="servicios.html#corporativo">Transporte para empresas</a>
+                        <a href="servicios.html#agricola">Transporte agrícola</a>
+                        <a href="servicios.html#clientes">Clientes</a>
+                    </div>
+                </details>
+                <details class="site-nav__group">
+                    <summary class="site-nav__item">Flota</summary>
+                    <div class="site-nav__panel">
+                        <a href="flota.html">Buses</a>
+                        <a href="flota.html#otras-unidades">Minibuses y furgones</a>
+                    </div>
+                </details>
+                <details class="site-nav__group" data-current="">
+                    <summary class="site-nav__item">Galería</summary>
+                    <div class="site-nav__panel">
+                        <a href="galeria.html" aria-current="page">Galería de viajes</a>
+                        <a href="galeria.html#santuario-cuna-de-prat">Santuario Cuna de Prat</a>
+                        <a href="actividades.html">Salidas y actividades</a>
+                        <a href="actividades.html#video">Video corporativo</a>
+                    </div>
+                </details>
+                <a class="site-nav__item" href="homenaje.html">Homenaje</a>
+                <a class="site-nav__item site-nav__contact" href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main id="contenido" tabindex="-1">
+    <section class="destinations" id="galeria">
+        <div class="container">
+            <div id="galleryIndex">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Buses en Acción</span>
+                <h1 class="section-title">Galería de <span>Viajes</span></h1>
+                <p class="section-subtitle">Nuestras unidades recorriendo los caminos de Chile. De la cordillera a la costa, siempre contigo.</p>
+            </div>
+            <div class="gallery-filters" aria-label="Filtrar álbumes" hidden>
+                <button type="button" data-filter="todo" aria-pressed="true">Todas</button>
+                <button type="button" data-filter="rutas" aria-pressed="false">Rutas</button>
+                <button type="button" data-filter="especiales" aria-pressed="false">Servicios especiales</button>
+            </div>
+            <div class="gallery-overview">
+                <a href="#rutas-de-chile" class="album-card" data-categories="rutas">
+                    <img src="images/galeria-cordillera.jpg" alt="" loading="lazy">
+                    <div><h2>Rutas de Chile</h2><p>Cordillera, valles y costa.</p></div>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="#santuario-cuna-de-prat" class="album-card" data-categories="especiales">
+                    <img src="images/santuario-cuna-de-prat-monumento.jpeg" alt="" loading="lazy">
+                    <div><h2>Santuario Cuna de Prat</h2><p>Servicio especial a Ninhue.</p></div>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+            <a class="home-services__all" href="actividades.html">Ver salidas y videos <span aria-hidden="true">&rarr;</span></a>
+            </div>
+
+            <div class="album-view" id="rutas-de-chile" data-album="rutas-de-chile" data-album-title="Rutas de Chile">
+            <a class="album-view__back" href="galeria.html">&larr; Volver a los álbumes</a>
+            <h2 class="section-title">Rutas de Chile</h2>
+            <div class="destinations__grid">
+                <div class="dest-card dest-card--large">
+                    <img src="images/galeria-cordillera.jpg" alt="Bus Reyes en la cordillera nevada" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <span class="dest-card__tag">Destacado</span>
+                        <h3>Ruta Cordillera</h3>
+                        <p>Nuestros buses recorren la cordillera con total seguridad, incluso en pleno invierno.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-atardecer.jpg" alt="Bus King Long al atardecer" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Rutas del Valle</h3>
+                        <p>Viajes por los valles y campos del Ñuble.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-noche.jpg" alt="Bus Reyes viajando de noche" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Viajes Nocturnos</h3>
+                        <p>Servicio 24/7, siempre listos para tu viaje.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-ruta.jpg" alt="Bus Reyes en ruta Región del Ñuble" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Región del Ñuble</h3>
+                        <p>Conectando Chillán con todo Chile.</p>
+                    </div>
+                </div>
+                <div class="dest-card">
+                    <img src="images/galeria-van.jpg" alt="Furgón Reyes para transfer y traslado menor" loading="lazy">
+                    <div class="dest-card__overlay">
+                        <h3>Traslado Menor</h3>
+                        <p>Furgón para traslados especiales y grupos reducidos.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Álbum: Servicio especial Santuario Cuna de Prat -->
+            <div class="gallery-album album-view" id="santuario-cuna-de-prat" data-album="santuario-cuna-de-prat" data-album-title="Santuario Cuna de Prat">
+                <a class="album-view__back" href="galeria.html">&larr; Volver a los álbumes</a>
+                <div class="gallery-album__header">
+                    <span class="gallery-album__tag"><i class="fa-solid fa-star"></i> Servicio Especial</span>
+                    <h3 class="gallery-album__title">Santuario Cuna de Prat, <span>Ninhue</span></h3>
+                    <p class="gallery-album__text">
+                        Realizamos un servicio especial al Santuario Cuna de Prat, en Ninhue, Región de Ñuble,
+                        lugar de nacimiento del héroe naval Arturo Prat. Un viaje lleno de historia y naturaleza,
+                        con la comodidad y seguridad de siempre.
+                    </p>
+                </div>
+                <div class="gallery-album__grid">
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-monumento.jpeg" data-lightbox-alt="Monumento a Arturo Prat en el Santuario Cuna de Prat, Ninhue" aria-label="Ver foto ampliada: monumento a Arturo Prat en el Santuario Cuna de Prat">
+                        <img src="images/santuario-cuna-de-prat-monumento.jpeg" alt="Monumento a Arturo Prat en el Santuario Cuna de Prat, Ninhue" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-bus-irizar-1.jpeg" data-lightbox-alt="Bus Reyes en el Santuario Cuna de Prat, Ninhue" aria-label="Ver foto ampliada: bus Reyes en el Santuario Cuna de Prat">
+                        <img src="images/santuario-cuna-de-prat-bus-irizar-1.jpeg" alt="Bus Reyes en el Santuario Cuna de Prat, Ninhue" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-bus-irizar-2.jpeg" data-lightbox-alt="Bus Reyes estacionado en el Santuario Cuna de Prat, rodeado de cerros" aria-label="Ver foto ampliada: bus Reyes estacionado en el Santuario Cuna de Prat">
+                        <img src="images/santuario-cuna-de-prat-bus-irizar-2.jpeg" alt="Bus Reyes estacionado en el Santuario Cuna de Prat, rodeado de cerros" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                    <button class="gallery-album__photo" type="button" data-lightbox-group="santuario" data-lightbox-src="images/santuario-cuna-de-prat-bus-azul.jpeg" data-lightbox-alt="Bus Irizar azul de Reyes en Ninhue, Región de Ñuble" aria-label="Ver foto ampliada: bus Irizar azul de Reyes en Ninhue">
+                        <img src="images/santuario-cuna-de-prat-bus-azul.jpeg" alt="Bus Irizar azul de Reyes en Ninhue, Región de Ñuble" loading="lazy">
+                        <span class="gallery-album__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                    </button>
+                </div>
+                <div class="gallery-album__cta">
+                    <p>¿Quieres organizar un viaje especial para tu grupo, colegio o institución?</p>
+                    <a href="https://wa.me/56936363564?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20especial%20al%20Santuario%20Cuna%20de%20Prat%2C%20Ninhue%2C%20con%20Transportes%20y%20Turismo%20Reyes." class="btn btn--primary" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i> Cotizar un servicio especial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <img loading="lazy" src="images/logo-corporativo-transparente.png" alt="Logo corporativo Transportes y Turismo Reyes" class="footer__logo-img">
+                        <div>
+                            <span>Transportes y Turismo</span>
+                            <strong>Reyes</strong>
+                        </div>
+                    </div>
+                    <p>Empresa de transporte de pasajeros y turismo con base en Chillán, Región del Ñuble. Conectamos personas con los destinos más hermosos de Chile.</p>
+                    <div class="footer__socials">
+                        <a href="https://www.facebook.com/share/1GTTWU1X2M/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/transportes_reyes1?igsh=MTQ2MHhxMGxyczh3OA==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@transportes.y.tur7?_r=1&_t=ZS-94zwaBvQXXp" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="./">Inicio</a></li>
+                        <li><a href="./#nosotros">Quiénes somos</a></li>
+                        <li><a href="./#historia">Nuestra historia</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="flota.html">Nuestra Flota</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="actividades.html">Más Actividades</a></li>
+                        <li><a href="contacto.html#preguntas">Preguntas Frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="servicios.html#turismo">Turismo y Excursiones</a></li>
+                        <li><a href="servicios.html#corporativo">Transporte Corporativo</a></li>
+                        <li><a href="servicios.html#giras">Paseos Grupales</a></li>
+                        <li><a href="servicios.html#giras">Traslados Especiales</a></li>
+                        <li><a href="servicios.html#agricola">Transporte Agrícola</a></li>
+                        <li><a href="servicios.html#escolar">Transporte Escolar</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> Chillán, Región del Ñuble, Chile</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener">+56 9 3636 3564</a></li>
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:+56986353834">+56 9 8635 3834</a></li>
+                        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:buses.rodrigoreyes@gmail.com">buses.rodrigoreyes@gmail.com</a></li>
+                        <li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/transportes_reyes1" target="_blank" rel="noopener">@transportes_reyes1</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="footer-year">2026</span> Transportes y Turismo Reyes. Todos los derechos reservados.</p>
+                <p class="footer__credit">
+                    Sitio web desarrollado por <strong>Diego Eduardo Henríquez González</strong>,
+                    Analista Programador.
+                    <a href="mailto:diegohen2005gonzales@gmail.com">diegohen2005gonzales@gmail.com</a>
+                    <span>·</span>
+                    <a href="https://wa.me/56997465007?text=Hola%20Diego%2C%20vi%20la%20p%C3%A1gina%20de%20Transportes%20Reyes%20y%20me%20interesa%20conversar%20sobre%20un%20sitio%20web." target="_blank" rel="noopener">+56 9 9746 5007</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BOTÓN WHATSAPP FLOTANTE ========== -->
+    <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20ayudar%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-float__text">¡Cotiza aquí!</span>
+    </a>
+
+    <!-- ========== BOTÓN SCROLL TOP ========== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- ========== VISOR DE FOTOS ========== -->
+    <div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+        <button class="photo-lightbox__close" id="photoLightboxClose" type="button" aria-label="Cerrar imagen">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="photo-lightbox__nav photo-lightbox__nav--prev" id="photoLightboxPrev" type="button" aria-label="Foto anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="photo-lightbox__stage" id="photoLightboxStage">
+            <img class="photo-lightbox__img" id="photoLightboxImg" alt="" title="Toca para hacer zoom">
+        </div>
+        <button class="photo-lightbox__nav photo-lightbox__nav--next" id="photoLightboxNext" type="button" aria-label="Foto siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="photo-lightbox__caption">
+            <span id="photoLightboxCaption"></span>
+            <span class="photo-lightbox__counter" id="photoLightboxCounter"></span>
+            <span class="photo-lightbox__hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Toca la foto para hacer zoom</span>
+        </div>
+    </div>
+
+</body>
+</html>
