@@ -130,6 +130,8 @@
 .skip-link:focus-visible { clip-path: none; }
 .site-header :focus-visible,
 .home-services a:focus-visible,
+.home-fleet a:focus-visible,
+.home-gallery :focus-visible,
 .home-hero button:focus-visible { outline: 3px solid #1677ff; outline-offset: 3px; }
 
 .home-hero {
@@ -236,6 +238,75 @@
 .home-service h3 { grid-column: 1; color: #102748; line-height: 1.35; font-size: 1.04rem; }
 .home-service p { grid-column: 1; color: #475b73; font-size: .88rem; }
 .home-service > span { grid-column: 2; grid-row: 1; color: #0057d9; font-size: 1.2rem; }
+.home-fleet {
+    --fleet-border: #dbe5f0;
+    padding: 46px 0 50px;
+    background: var(--white);
+}
+.home-fleet .home-services__heading p {
+    margin-top: 6px;
+    color: #475b73;
+    font-size: .93rem;
+}
+.home-fleet__group {
+    margin-bottom: 12px;
+    color: #102748;
+    font-size: 1.05rem;
+}
+.home-fleet__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+.home-fleet__grid + .home-fleet__group { margin-top: 24px; }
+.home-vehicle {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--fleet-border);
+    border-radius: 8px;
+    min-width: 0;
+    background: #fbfdff;
+}
+.home-vehicle:hover,
+.home-vehicle:focus-within { border-color: #8fb7e8; }
+.home-vehicle__detail { flex: 1; display: block; }
+.home-vehicle__detail img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+    border-radius: 7px 7px 0 0;
+    background: #e6eff9;
+}
+.home-vehicle__info { padding: 10px 12px 9px; }
+.home-vehicle__info span {
+    display: block;
+    color: #17509b;
+    font-size: .72rem;
+    font-weight: 700;
+}
+.home-vehicle__info h4 {
+    color: #102748;
+    font-size: .95rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+.home-vehicle__quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 6px;
+    border-top: 1px solid var(--fleet-border);
+    border-radius: 0 0 7px 7px;
+    background: #f2faee;
+    color: #176044;
+    font-size: .78rem;
+    font-weight: 700;
+}
+.home-vehicle__quote:hover { background: #e1f6d9; }
+.home-vehicle__quote i { font-size: 1rem; }
 .home-about,
 .home-history { padding-block: 54px; }
 .home-about .about__container { align-items: center; }
@@ -247,6 +318,118 @@
 }
 .home-about .about__content { padding-top: 0; }
 .home-about .about__specialty { margin-bottom: 0; }
+.home-gallery {
+    --gallery-ink: #102748;
+    padding-block: 46px 34px;
+    border-top: 1px solid #d9e8f7;
+    background: linear-gradient(120deg, #edf5ff, #fff 64%, #f0f8ec);
+}
+.home-gallery__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 14px 24px;
+    margin-bottom: 22px;
+}
+.home-gallery__heading h2 {
+    color: var(--gallery-ink);
+    font-size: 2.35rem;
+    line-height: 1.15;
+    text-wrap: balance;
+}
+.home-gallery__heading h2::before {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 4px;
+    margin-bottom: 12px;
+    background: #45d52d;
+}
+.home-gallery__heading p {
+    margin-top: 6px;
+    color: #475b73;
+    font-size: .93rem;
+}
+.home-gallery__albums {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background: #0057d9;
+    color: #fff;
+    font-size: .86rem;
+    font-weight: 700;
+}
+.home-gallery__albums:hover { background: #003f9f; }
+.home-gallery__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 174px));
+    gap: 12px;
+}
+.home-gallery__photo {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: end;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 14px 16px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--gallery-ink);
+    color: #fff;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 700;
+}
+.home-gallery__photo--lead { grid-row: span 2; font-size: 1.65rem; padding: 18px 20px; }
+.home-gallery__photo img,
+.home-gallery__photo::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.home-gallery__photo img { object-fit: cover; transition: transform .25s ease; }
+.home-gallery__photo--lead img { object-position: center 46%; }
+.home-gallery__photo:hover img { transform: scale(1.04); }
+.home-gallery__photo::after {
+    content: "";
+    background: linear-gradient(0deg, rgb(6 23 49 / 94%), transparent 62%);
+}
+.home-gallery__caption small { display: block; margin-top: 4px; color: #e1edff; font-size: .72rem; }
+.home-gallery__expand {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #102748;
+    color: #9cff7f;
+    font-size: .88rem;
+}
+.home-gallery__links { display: flex; flex-wrap: wrap; gap: 2px 18px; margin-top: 12px; }
+.home-gallery__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    color: #004bb7;
+    font-size: .87rem;
+    font-weight: 700;
+}
+.home-gallery__links a:hover { text-decoration: underline; }
 .home-history .section-header { margin-bottom: 26px; }
 .home-history .section-title { margin-bottom: 0; }
 .site-cta { padding: 44px 0; background: #0a244b; }
@@ -260,7 +443,9 @@
 .site-inner .fleet-card__info { flex: 1; display: flex; flex-direction: column; }
 .site-inner .fleet-card__info .btn { margin-top: auto; align-self: flex-start; }
 .site-inner .fleet-card__info h3 { overflow-wrap: anywhere; }
+.site-inner .fleet-card:target { outline: 3px solid #0057d9; outline-offset: 3px; }
 .site-inner .gallery-album,
+.site-inner .fleet-card,
 .site-inner .service-card,
 .site-inner #contactForm { scroll-margin-top: 16px; }
 .site-inner .contact__container > * { min-width: 0; }
@@ -349,11 +534,32 @@
     .home-about,
     .home-history { padding-block: 36px; }
     .home-about .home-services__label { text-align: center; }
+    .home-about .about__container { gap: 18px !important; }
+    .home-about .about__content { grid-row: 1; }
+    .home-gallery { padding-block: 30px 24px; }
+    .home-gallery__heading { margin-bottom: 16px; }
+    .home-gallery__heading h2 { font-size: 1.75rem; }
+    .home-gallery__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 8px;
+    }
+    .home-gallery__photo { padding: 8px 10px; min-height: 104px; aspect-ratio: 4 / 3; font-size: .81rem; }
+    .home-gallery__photo--lead { grid-area: 1 / 1 / 2 / -1; aspect-ratio: 16 / 9; padding: 12px; font-size: 1.2rem; }
+    .home-gallery__expand { top: 8px; right: 8px; width: 26px; height: 26px; font-size: .72rem; }
     .home-services { padding: 26px 0 34px; }
     .home-services__heading h2 { font-size: 1.5rem; }
-    .home-services__grid,
     .gallery-overview,
     .site-inner .fleet__grid { grid-template-columns: minmax(0, 1fr); }
+    .home-services__grid,
+    .home-fleet__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .home-service { padding: 12px; }
+    .home-service h3 { font-size: .9rem; }
+    .home-service p { font-size: .79rem; line-height: 1.5; }
+    .home-fleet { padding-block: 30px 34px; }
+    .home-vehicle__detail img { aspect-ratio: 4 / 3; }
+    .home-vehicle__info { padding: 8px 9px; }
+    .home-vehicle__info h4 { font-size: .84rem; }
     .home-hero .hero__overlay { background: linear-gradient(90deg, rgb(6 27 63 / 89%), rgb(6 27 63 / 56%)); }
     .home-hero .hero__slide { padding-top: 30px; }
     .home-hero .hero__title { font-size: 2.1rem; }
@@ -378,4 +584,6 @@
     html { scroll-behavior: auto; }
     .home-hero *, .site-nav * { animation: none !important; transition: none !important; }
     .site-header__menu-hint span { animation: none; }
+    .home-gallery__photo img { transition: none; }
+    .home-gallery__photo:hover img { transform: none; }
 }

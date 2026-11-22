@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.body.classList.contains('site-home')) {
         const legacyLinks = {
             homenaje: 'homenaje.html',
-            servicios: 'servicios.html',
             clientes: 'servicios.html#clientes',
-            flota: 'flota.html',
             'otras-unidades': 'flota.html#otras-unidades',
             galeria: 'galeria.html',
             'santuario-cuna-de-prat': 'galeria.html#santuario-cuna-de-prat',

@@ -215,8 +215,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="css/navigation.css?v=20261119c">
-    <script src="js/main.js?v=20261119c" defer></script>
+    <link rel="stylesheet" href="css/navigation.css?v=20261122c">
+    <script src="js/main.js?v=20261122" defer></script>
 </head>
 <body class="site-home">
     <a href="#contenido" class="skip-link">Saltar al contenido</a>
@@ -234,6 +234,7 @@
                 <details class="site-nav__group">
                     <summary class="site-nav__item">Servicios</summary>
                     <div class="site-nav__panel">
+                        <a href="#servicios">Servicios en el inicio</a>
                         <a href="servicios.html">Todos los servicios</a>
                         <a href="servicios.html#escolar">Transporte escolar</a>
                         <a href="servicios.html#giras">Giras de estudio</a>
@@ -246,6 +247,7 @@
                 <details class="site-nav__group">
                     <summary class="site-nav__item">Flota</summary>
                     <div class="site-nav__panel">
+                        <a href="#flota">Flota en el inicio</a>
                         <a href="flota.html">Buses</a>
                         <a href="flota.html#otras-unidades">Minibuses y furgones</a>
                     </div>
@@ -253,6 +255,7 @@
                 <details class="site-nav__group">
                     <summary class="site-nav__item">Galería</summary>
                     <div class="site-nav__panel">
+                        <a href="#viajes">Fotos en el inicio</a>
                         <a href="galeria.html">Galería de viajes</a>
                         <a href="galeria.html#santuario-cuna-de-prat">Santuario Cuna de Prat</a>
                         <a href="actividades.html">Salidas y actividades</a>
@@ -281,7 +284,7 @@
                         <a href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20consultar%20por%20sus%20servicios%20de%20transporte.%20%C2%BFMe%20pueden%20orientar%3F" class="btn btn--primary" target="_blank" rel="noopener">
                             <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
                         </a>
-                        <a href="servicios.html" class="btn btn--outline">Ver Servicios</a>
+                        <a href="#servicios" class="btn btn--outline">Ver servicios</a>
                     </div>
                 </div>
             </div>
@@ -293,7 +296,7 @@
                     <h2 class="hero__title">Tu viaje comienza <span>con Reyes</span></h2>
                     <p class="hero__text">Buses Mercedes Benz, Scania, Volvo y King Long para servicios de turismo, empresas y colegios.</p>
                     <div class="hero__buttons">
-                        <a href="flota.html" class="btn btn--primary"><i class="fa-solid fa-bus"></i> Conoce Nuestra Flota</a>
+                        <a href="#flota" class="btn btn--primary"><i class="fa-solid fa-bus"></i> Conoce nuestra flota</a>
                         <a href="contacto.html" class="btn btn--outline">Reservar Ahora</a>
                     </div>
                 </div>
@@ -321,34 +324,299 @@
         <button class="hero__pause" id="heroPause" type="button" aria-label="Pausar carrusel"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
     </section>
 
-    <section class="home-services" aria-labelledby="home-services-title">
+    <section class="about home-about" id="nosotros" aria-labelledby="home-about-title">
+        <div class="container about__container">
+
+            <!-- Imagen + badge -->
+            <div class="about__images">
+                <div class="about__img-main">
+                    <img src="images/hero-1.jpg" alt="Bus Transportes y Turismo Reyes en ruta, Chillán Región del Ñuble" loading="lazy">
+                </div>
+                <div class="about__img-secondary">
+                    <img src="images/furgon-reyes-chillan.jpeg" alt="Furgón de Transportes y Turismo Reyes en Chillán" loading="lazy">
+                </div>
+                <div class="about__experience-badge">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Experiencia</span>
+                    <strong>Comprobada</strong>
+                </div>
+            </div>
+
+            <!-- Contenido textual -->
+            <div class="about__content">
+                <p class="home-services__label">Transportes y Turismo Reyes</p>
+                <h2 class="section-title" id="home-about-title">Quiénes somos</h2>
+
+                <p class="about__lead-text">
+                    Somos una empresa de transporte de pasajeros de <strong>Chillán, Región de Ñuble</strong>. Bajo la dirección de <strong>Rodrigo Reyes Vargas</strong>, organizamos viajes para colegios, familias y empresas por todo Chile.
+                </p>
+
+                <div class="about__purpose-banner">
+                    <i class="fa-solid fa-route"></i>
+                    <p><strong>Nuestro propósito:</strong> acercar personas y acortar distancias, entregando transporte profesional, humano y de alto estándar.</p>
+                </div>
+
+                <!-- Especialización destacada -->
+                <div class="about__specialty">
+                    <div class="about__specialty-icon"><i class="fa-solid fa-school"></i></div>
+                    <div>
+                        <h3>Especialistas en transporte escolar</h3>
+                        <p>Realizamos giras de estudio, salidas pedagógicas y paseos de curso con conductores certificados y una flota mantenida para cada viaje.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="home-services" id="servicios" aria-labelledby="home-services-title">
         <div class="container">
             <div class="home-services__heading">
                 <div>
                     <p class="home-services__label">Desde Chillán, Región de Ñuble</p>
-                    <h2 id="home-services-title">Transporte para cada viaje</h2>
+                    <h2 id="home-services-title">Nuestros servicios</h2>
                 </div>
-                <a class="home-services__all" href="servicios.html">Ver todos los servicios <span aria-hidden="true">&rarr;</span></a>
+                <a class="home-services__all" href="servicios.html">Detalles y cotizaciones <span aria-hidden="true">&rarr;</span></a>
             </div>
             <div class="home-services__grid">
                 <a href="servicios.html#escolar" class="home-service">
                     <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                    <h3>Colegios y giras de estudio</h3>
-                    <p>Transporte escolar, paseos de curso y salidas pedagógicas.</p>
+                    <h3>Transporte escolar</h3>
+                    <p>Traslados de estudiantes para colegios y establecimientos.</p>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="servicios.html#giras" class="home-service">
+                    <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
+                    <h3>Giras de estudio</h3>
+                    <p>Paseos de curso, salidas pedagógicas y viajes especiales.</p>
                     <span aria-hidden="true">&rarr;</span>
                 </a>
                 <a href="servicios.html#turismo" class="home-service">
                     <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
-                    <h3>Turismo y viajes especiales</h3>
+                    <h3>Turismo y excursiones</h3>
                     <p>Excursiones y traslados para familias y grupos por todo Chile.</p>
                     <span aria-hidden="true">&rarr;</span>
                 </a>
                 <a href="servicios.html#corporativo" class="home-service">
                     <i class="fa-solid fa-building" aria-hidden="true"></i>
-                    <h3>Empresas y personal</h3>
-                    <p>Traslados corporativos, eventos y transporte agrícola de temporada.</p>
+                    <h3>Transporte corporativo</h3>
+                    <p>Traslado de personal y transporte para eventos de empresa.</p>
                     <span aria-hidden="true">&rarr;</span>
                 </a>
+                <a href="servicios.html#agricola" class="home-service">
+                    <i class="fa-solid fa-tractor" aria-hidden="true"></i>
+                    <h3>Transporte agrícola</h3>
+                    <p>Traslados de trabajadores de temporada con rutas coordinadas.</p>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="servicios.html#cama" class="home-service">
+                    <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                    <h3>Salón cama y semi cama</h3>
+                    <p>Asientos reclinables y más espacio para viajes largos.</p>
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-fleet" id="flota" aria-labelledby="home-fleet-title">
+        <div class="container">
+            <div class="home-services__heading">
+                <div>
+                    <h2 id="home-fleet-title">Nuestra flota</h2>
+                    <p>Buses cama, semi cama y ejecutivos, además de unidades para grupos pequeños.</p>
+                </div>
+                <a class="home-services__all" href="flota.html">Ver especificaciones <span aria-hidden="true">&rarr;</span></a>
+            </div>
+
+            <h3 class="home-fleet__group">Buses</h3>
+            <ul class="home-fleet__grid">
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#volvo-mixto">
+                        <img src="images/scania-exterior.jpg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Cama y semi cama</span>
+                            <h4>Volvo salón mixto</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Bus%20Volvo%20Sal%C3%B3n%20Mixto%20Semi%20Cama%20Superior%20y%20Cama%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Volvo salón mixto por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#volvo-cama">
+                        <img src="images/volvo-salon-cama.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Cama</span>
+                            <h4>Volvo salón cama</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Bus%20Volvo%20-%20Sal%C3%B3n%20Cama%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Volvo salón cama por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#mercedes-century">
+                        <img src="images/bus-1.jpg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Ejecutivo</span>
+                            <h4>Mercedes-Benz Century</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Mercedes%20Benz%20Sal%C3%B3n%20Ejecutivo%20(Century)%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Mercedes-Benz Century por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#mercedes-azul">
+                        <img src="images/bus-playa-mercedes.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Ejecutivo</span>
+                            <h4>Mercedes-Benz azul y blanco</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Mercedes%20Benz%20Sal%C3%B3n%20Ejecutivo%20(foto%20en%20la%20playa)%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Mercedes-Benz azul y blanco por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#scania-semi-cama">
+                        <img src="images/hero-irizar-azul.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Semi cama</span>
+                            <h4>Scania semi cama</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Scania%20Sal%C3%B3n%20Semi%20Cama%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Scania semi cama por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#king-long-naranja">
+                        <img src="images/bus-2.jpg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Ejecutivo</span>
+                            <h4>King Long naranja</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20King%20Long%20Sal%C3%B3n%20Ejecutivo%20(naranja)%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar King Long naranja por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#mercedes-rojo">
+                        <img src="images/mercedes-benz-salon-ejecutivo-rojo.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Ejecutivo</span>
+                            <h4>Mercedes-Benz rojo</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Mercedes%20Benz%20Sal%C3%B3n%20Ejecutivo%20(rojo)%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Mercedes-Benz rojo por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#king-long-blanco">
+                        <img src="images/king-long-ejecutivo-blanco.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Ejecutivo</span>
+                            <h4>King Long blanco</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20King%20Long%20Ejecutivo%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar King Long blanco por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#king-long-rojo">
+                        <img src="images/bus-3.jpg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Ejecutivo</span>
+                            <h4>King Long rojo</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20King%20Long%20Sal%C3%B3n%20Ejecutivo%20(rojo)%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar King Long rojo por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+            </ul>
+
+            <h3 class="home-fleet__group">Furgones y taxi bus</h3>
+            <ul class="home-fleet__grid home-fleet__grid--small">
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#sprinter">
+                        <img src="images/bus-5.jpg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Furgón ejecutivo</span>
+                            <h4>Mercedes-Benz Sprinter</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Mercedes%20Benz%20Sprinter%20Ejecutivo%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Mercedes-Benz Sprinter por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#ford-transit">
+                        <img src="images/ford-transit-ejecutivo.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Furgón ejecutivo</span>
+                            <h4>Ford Transit</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Ford%20Transit%20Ejecutivo%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Ford Transit por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+                <li class="home-vehicle">
+                    <a class="home-vehicle__detail" href="flota.html#taxi-bus">
+                        <img src="images/taxibus-rosa.jpeg" alt="" loading="lazy" decoding="async">
+                        <div class="home-vehicle__info">
+                            <span>Taxi bus ejecutivo</span>
+                            <h4>Taxi bus Mercedes-Benz</h4>
+                        </div>
+                    </a>
+                    <a class="home-vehicle__quote" href="https://wa.me/56936363564?text=Hola%2C%20estoy%20interesado%2Fa%20en%20cotizar%20el%20Taxi%20bus%20Mercedes%20Benz%20Sal%C3%B3n%20Ejecutivo%20de%20Transportes%20y%20Turismo%20Reyes." target="_blank" rel="noopener" aria-label="Cotizar Taxi bus Mercedes-Benz por WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Cotizar
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="home-gallery" id="viajes" aria-labelledby="home-gallery-title">
+        <div class="container">
+            <div class="home-gallery__heading">
+                <div>
+                    <h2 id="home-gallery-title">Nuestros viajes en fotos</h2>
+                    <p>De la cordillera nevada a la costa de Chile.</p>
+                </div>
+                <a class="home-gallery__albums" href="galeria.html">
+                    <i class="fa-solid fa-images" aria-hidden="true"></i>
+                    Ver todos los álbumes
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="home-gallery__grid">
+                <button class="home-gallery__photo home-gallery__photo--lead" type="button" data-lightbox-group="viajes-inicio" data-lightbox-src="images/galeria-cordillera.jpg" data-lightbox-alt="Bus Reyes en la cordillera nevada" aria-label="Ampliar foto: Ruta Cordillera">
+                    <img src="images/galeria-cordillera.jpg" alt="" loading="lazy" decoding="async">
+                    <span class="home-gallery__caption">Ruta Cordillera</span>
+                    <i class="fa-solid fa-expand home-gallery__expand" aria-hidden="true"></i>
+                </button>
+                <button class="home-gallery__photo" type="button" data-lightbox-group="viajes-inicio" data-lightbox-src="images/bus-playa-mercedes.jpeg" data-lightbox-alt="Bus Mercedes-Benz de Transportes y Turismo Reyes junto a la costa" aria-label="Ampliar foto: Viajes a la costa">
+                    <img src="images/bus-playa-mercedes.jpeg" alt="" loading="lazy" decoding="async">
+                    <span class="home-gallery__caption">Viajes a la costa</span>
+                    <i class="fa-solid fa-expand home-gallery__expand" aria-hidden="true"></i>
+                </button>
+                <button class="home-gallery__photo" type="button" data-lightbox-group="viajes-inicio" data-lightbox-src="images/santuario-cuna-de-prat-bus-irizar-1.jpeg" data-lightbox-alt="Bus Reyes en el Santuario Cuna de Prat, Ninhue" aria-label="Ampliar foto: Cuna de Prat">
+                    <img src="images/santuario-cuna-de-prat-bus-irizar-1.jpeg" alt="" loading="lazy" decoding="async">
+                    <span class="home-gallery__caption">Cuna de Prat <small>Ninhue, Ñuble</small></span>
+                    <i class="fa-solid fa-expand home-gallery__expand" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="home-gallery__links">
+                <a href="galeria.html#santuario-cuna-de-prat"><i class="fa-solid fa-camera" aria-hidden="true"></i> Álbum Cuna de Prat <span aria-hidden="true">&rarr;</span></a>
+                <a href="actividades.html"><i class="fa-solid fa-circle-play" aria-hidden="true"></i> Salidas y videos <span aria-hidden="true">&rarr;</span></a>
             </div>
         </div>
     </section>
@@ -397,52 +665,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="about home-about" id="nosotros" aria-labelledby="home-about-title">
-        <div class="container about__container">
-
-            <!-- Imagen + badge -->
-            <div class="about__images">
-                <div class="about__img-main">
-                    <img src="images/hero-1.jpg" alt="Bus Transportes y Turismo Reyes en ruta, Chillán Región del Ñuble" loading="lazy">
-                </div>
-                <div class="about__img-secondary">
-                    <img src="images/furgon-reyes-chillan.jpeg" alt="Furgón de Transportes y Turismo Reyes en Chillán" loading="lazy">
-                </div>
-                <div class="about__experience-badge">
-                    <i class="fa-solid fa-award"></i>
-                    <span>Experiencia</span>
-                    <strong>Comprobada</strong>
-                </div>
-            </div>
-
-            <!-- Contenido textual -->
-            <div class="about__content">
-                <p class="home-services__label">Transportes y Turismo Reyes</p>
-                <h2 class="section-title" id="home-about-title">Quiénes somos</h2>
-
-                <p class="about__lead-text">
-                    Somos una empresa de transporte de pasajeros de <strong>Chillán, Región de Ñuble</strong>. Bajo la dirección de <strong>Rodrigo Reyes Vargas</strong>, organizamos viajes para colegios, familias y empresas por todo Chile.
-                </p>
-
-                <div class="about__purpose-banner">
-                    <i class="fa-solid fa-route"></i>
-                    <p><strong>Nuestro propósito:</strong> acercar personas y acortar distancias, entregando transporte profesional, humano y de alto estándar.</p>
-                </div>
-
-                <!-- Especialización destacada -->
-                <div class="about__specialty">
-                    <div class="about__specialty-icon"><i class="fa-solid fa-school"></i></div>
-                    <div>
-                        <h3>Especialistas en transporte escolar</h3>
-                        <p>Realizamos giras de estudio, salidas pedagógicas y paseos de curso con conductores certificados y una flota mantenida para cada viaje.</p>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </section>
 
